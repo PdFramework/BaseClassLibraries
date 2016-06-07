@@ -1,8 +1,9 @@
-﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.Contracts
+﻿
+namespace PeinearyDevelopment.Framework.BaseClassLibraries.DataAccess.Contracts
 {
     using System;
 
-    public class DateRangeEffectiveContractBase<TId> : IdContractBase<TId>
+    public class DateRangeEffectiveDtoBase<TId> : IdDtoBase<TId>
     {
         public DateTimeOffset EffectiveStartDate { get; set; }
         public DateTimeOffset? EffectiveEndDate { get; set; }
