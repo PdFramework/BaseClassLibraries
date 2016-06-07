@@ -1,5 +1,7 @@
 ﻿namespace IntegrationTests.SpecFlow
 {
+    using PeinearyDevelopment.Framework.BaseClassLibraries.Exceptions;
+
     using ApiClients;
     using Contracts;
 
@@ -196,7 +198,7 @@
                 CountriesClient.GetCountry(TestCountriesCreated.First().Id).GetAwaiter().GetResult();
                 Assert.Fail();
             }
-            catch (HttpRequestException)
+            catch (ApiInvokerException)
             {
                 TestCountriesCreated.Remove(TestCountriesCreated.First());
             }
@@ -230,7 +232,7 @@
                 {
                     using (var response = client.DeleteAsync(uri).GetAwaiter().GetResult())
                     {
-                        if (!response.IsSuccessStatusCode) throw new Exception(response.Content.ToString());
+                        if (!response.IsSuccessStatusCode) throw new HttpRequestException(response.Content.ToString());
                     }
                 }
             }

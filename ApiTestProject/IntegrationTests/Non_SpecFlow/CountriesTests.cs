@@ -1,5 +1,7 @@
 ﻿namespace IntegrationTests.Non_SpecFlow
 {
+    using PeinearyDevelopment.Framework.BaseClassLibraries.Exceptions;
+
     using ApiClients;
     using Contracts;
 
@@ -156,7 +158,7 @@
                 await CountriesClient.GetCountry(countryId);
                 Assert.Fail($"Address id: {countryId} was found after it should have been deleted.");
             }
-            catch (HttpRequestException)
+            catch (ApiInvokerException)
             {
             }
         }

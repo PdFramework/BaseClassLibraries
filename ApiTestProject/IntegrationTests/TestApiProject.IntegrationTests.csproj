@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9B10DB65-127C-48C2-B3D0-CAD24CA04824}</ProjectGuid>
+    <ProjectGuid>{887AA15D-F92D-4E11-80BB-ADC37E2E3769}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnitTests</RootNamespace>
-    <AssemblyName>UnitTests</AssemblyName>
+    <RootNamespace>IntegrationTests</RootNamespace>
+    <AssemblyName>IntegrationTests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -36,8 +36,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Web" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -47,36 +47,46 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
-          <Private>False</Private>
-        </Reference>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="CountriesControllerTests.cs" />
+    <Compile Include="Non_SpecFlow\CountriesTests.cs" />
+    <Compile Include="Non_SpecFlow\TestData.cs" />
+    <Compile Include="SpecFlow\CountriesSteps.cs" />
+    <Compile Include="SpecFlow\CountriesTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountriesTests.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Apis\Apis.csproj">
-      <Project>{7BDFDF0A-96E2-44B3-A94F-569DAEB64ECE}</Project>
-      <Name>Apis</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Contracts\Contracts.csproj">
-      <Project>{AF49C378-22B0-4CD9-A1B9-382140C9F0D9}</Project>
-      <Name>Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataAccessContracts\DataAccessContracts.csproj">
-      <Project>{936ACF08-89DB-4F2D-A6C4-321DDD1648AC}</Project>
-      <Name>DataAccessContracts</Name>
-    </ProjectReference>
+    <None Include="App.config" />
+    <None Include="SpecFlow\CountriesTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CountriesTests.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <ProjectReference Include="..\..\Exceptions\Exceptions.csproj">
+      <Project>{0C42EA65-15B6-459D-949A-85C88A7B30E4}</Project>
+      <Name>Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApiClients\TestApiProject.ApiClients.csproj">
+      <Project>{F00979DA-7E8F-4967-8E2D-7FC3D25F2135}</Project>
+      <Name>TestApiProject.ApiClients</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contracts\TestApiProject.Contracts.csproj">
+      <Project>{AF49C378-22B0-4CD9-A1B9-382140C9F0D9}</Project>
+      <Name>TestApiProject.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

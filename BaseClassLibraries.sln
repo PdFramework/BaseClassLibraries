@@ -3,21 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apis", "ApiTestProject\Apis\Apis.csproj", "{7BDFDF0A-96E2-44B3-A94F-569DAEB64ECE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApiProject.Apis", "ApiTestProject\Apis\TestApiProject.Apis.csproj", "{7BDFDF0A-96E2-44B3-A94F-569DAEB64ECE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClients", "ApiTestProject\ApiClients\ApiClients.csproj", "{F00979DA-7E8F-4967-8E2D-7FC3D25F2135}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApiProject.ApiClients", "ApiTestProject\ApiClients\TestApiProject.ApiClients.csproj", "{F00979DA-7E8F-4967-8E2D-7FC3D25F2135}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "ApiTestProject\Contracts\Contracts.csproj", "{AF49C378-22B0-4CD9-A1B9-382140C9F0D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApiProject.Contracts", "ApiTestProject\Contracts\TestApiProject.Contracts.csproj", "{AF49C378-22B0-4CD9-A1B9-382140C9F0D9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiTestProject", "ApiTestProject", "{D88E6D70-8712-4EAB-9B9D-B7406CDF43F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessContracts", "ApiTestProject\DataAccessContracts\DataAccessContracts.csproj", "{936ACF08-89DB-4F2D-A6C4-321DDD1648AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApiProject.DataAccessContracts", "ApiTestProject\DataAccessContracts\TestApiProject.DataAccessContracts.csproj", "{936ACF08-89DB-4F2D-A6C4-321DDD1648AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "ApiTestProject\DataAccess\DataAccess.csproj", "{2408588C-4FE3-4DED-81A1-E6C9C9174CA6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApiProject.DataAccess", "ApiTestProject\DataAccess\TestApiProject.DataAccess.csproj", "{2408588C-4FE3-4DED-81A1-E6C9C9174CA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "ApiTestProject\UnitTests\UnitTests.csproj", "{9B10DB65-127C-48C2-B3D0-CAD24CA04824}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApiProject.UnitTests", "ApiTestProject\UnitTests\TestApiProject.UnitTests.csproj", "{9B10DB65-127C-48C2-B3D0-CAD24CA04824}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "ApiTestProject\IntegrationTests\IntegrationTests.csproj", "{887AA15D-F92D-4E11-80BB-ADC37E2E3769}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApiProject.IntegrationTests", "ApiTestProject\IntegrationTests\TestApiProject.IntegrationTests.csproj", "{887AA15D-F92D-4E11-80BB-ADC37E2E3769}"
+	ProjectSection(ProjectDependencies) = postProject
+		{936ACF08-89DB-4F2D-A6C4-321DDD1648AC} = {936ACF08-89DB-4F2D-A6C4-321DDD1648AC}
+		{7BDFDF0A-96E2-44B3-A94F-569DAEB64ECE} = {7BDFDF0A-96E2-44B3-A94F-569DAEB64ECE}
+		{BFD33B77-08B8-4FEC-9065-FE8A944E64D2} = {BFD33B77-08B8-4FEC-9065-FE8A944E64D2}
+		{2408588C-4FE3-4DED-81A1-E6C9C9174CA6} = {2408588C-4FE3-4DED-81A1-E6C9C9174CA6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClients", "ApiClients\ApiClients.csproj", "{BFD33B77-08B8-4FEC-9065-FE8A944E64D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{0C42EA65-15B6-459D-949A-85C88A7B30E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +63,14 @@ Global
 		{887AA15D-F92D-4E11-80BB-ADC37E2E3769}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{887AA15D-F92D-4E11-80BB-ADC37E2E3769}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{887AA15D-F92D-4E11-80BB-ADC37E2E3769}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFD33B77-08B8-4FEC-9065-FE8A944E64D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFD33B77-08B8-4FEC-9065-FE8A944E64D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFD33B77-08B8-4FEC-9065-FE8A944E64D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFD33B77-08B8-4FEC-9065-FE8A944E64D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C42EA65-15B6-459D-949A-85C88A7B30E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C42EA65-15B6-459D-949A-85C88A7B30E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C42EA65-15B6-459D-949A-85C88A7B30E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C42EA65-15B6-459D-949A-85C88A7B30E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
