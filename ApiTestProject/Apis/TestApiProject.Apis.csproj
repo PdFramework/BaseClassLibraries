@@ -88,17 +88,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Contracts\Contracts.csproj">
+    <ProjectReference Include="..\Contracts\TestApiProject.Contracts.csproj">
       <Project>{AF49C378-22B0-4CD9-A1B9-382140C9F0D9}</Project>
-      <Name>Contracts</Name>
+      <Name>TestApiProject.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAccessContracts\DataAccessContracts.csproj">
+    <ProjectReference Include="..\DataAccessContracts\TestApiProject.DataAccessContracts.csproj">
       <Project>{936ACF08-89DB-4F2D-A6C4-321DDD1648AC}</Project>
-      <Name>DataAccessContracts</Name>
+      <Name>TestApiProject.DataAccessContracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+    <ProjectReference Include="..\DataAccess\TestApiProject.DataAccess.csproj">
       <Project>{2408588C-4FE3-4DED-81A1-E6C9C9174CA6}</Project>
-      <Name>DataAccess</Name>
+      <Name>TestApiProject.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
