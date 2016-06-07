@@ -61,6 +61,10 @@
     <Content Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Contracts\Contracts.csproj">
+      <Project>{158C0B9A-B0C0-4436-8962-926C4FFB25FA}</Project>
+      <Name>Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Apis\TestApiProject.Apis.csproj">
       <Project>{7BDFDF0A-96E2-44B3-A94F-569DAEB64ECE}</Project>
       <Name>TestApiProject.Apis</Name>
