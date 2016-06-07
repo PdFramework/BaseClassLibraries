@@ -88,6 +88,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Contracts\Contracts.csproj">
+      <Project>{158C0B9A-B0C0-4436-8962-926C4FFB25FA}</Project>
+      <Name>Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Contracts\TestApiProject.Contracts.csproj">
       <Project>{AF49C378-22B0-4CD9-A1B9-382140C9F0D9}</Project>
       <Name>TestApiProject.Contracts</Name>
