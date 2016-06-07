@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{158C0B9A-B0C0-4436-8962-926C4FFB25FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Contracts", "DataAccess.Contracts\DataAccess.Contracts.csproj", "{37630F58-AB43-4599-A0FB-8DE45C593B89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{158C0B9A-B0C0-4436-8962-926C4FFB25FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{158C0B9A-B0C0-4436-8962-926C4FFB25FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{158C0B9A-B0C0-4436-8962-926C4FFB25FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37630F58-AB43-4599-A0FB-8DE45C593B89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37630F58-AB43-4599-A0FB-8DE45C593B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37630F58-AB43-4599-A0FB-8DE45C593B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37630F58-AB43-4599-A0FB-8DE45C593B89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
