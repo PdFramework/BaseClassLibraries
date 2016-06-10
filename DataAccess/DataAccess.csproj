@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{37630F58-AB43-4599-A0FB-8DE45C593B89}</ProjectGuid>
+    <ProjectGuid>{67DBD66A-2EF8-4672-BE74-CE162CE8E097}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PeinearyDevelopment.Framework.BaseClassLibraries.DataAccess.Contracts</RootNamespace>
-    <AssemblyName>PeinearyDevelopment.Framework.BaseClassLibraries.DataAccess.Contracts</AssemblyName>
+    <RootNamespace>PeinearyDevelopment.Framework.BaseClassLibraries.DataAccess</RootNamespace>
+    <AssemblyName>PeinearyDevelopment.Framework.BaseClassLibraries.DataAccess</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>DataAccess.Contracts.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>DataAccess.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,10 +30,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>DataAccess.Contracts.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>DataAccess.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,23 +44,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DateRangeEffectiveDtoBase.cs" />
-    <Compile Include="IDalBase.cs" />
-    <Compile Include="IdDtoBase.cs" />
+    <Compile Include="DalBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DataAccess.Contracts.ruleset" />
+    <None Include="App.config" />
+    <None Include="DataAccess.ruleset" />
+    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+    <Content Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+    <ProjectReference Include="..\DataAccess.Contracts\DataAccess.Contracts.csproj">
+      <Project>{37630F58-AB43-4599-A0FB-8DE45C593B89}</Project>
+      <Name>DataAccess.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
