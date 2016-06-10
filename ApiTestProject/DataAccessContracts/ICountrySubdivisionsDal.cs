@@ -1,14 +1,13 @@
-﻿namespace DataAccessContracts
+﻿
+namespace DataAccessContracts
 {
+    using PeinearyDevelopment.Framework.BaseClassLibraries.DataAccess.Contracts;
+
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    public interface ICountrySubdivisionsDal
+    public interface ICountrySubdivisionsDal : IDalBase<CountrySubdivisionDto, int>
     {
-        Task<CountrySubdivisionDto> Create(CountrySubdivisionDto countrySubdivision);
-        Task<CountrySubdivisionDto> Read(int countrySubdivisionId);
-        Task<CountrySubdivisionDto> Update(CountrySubdivisionDto countrySubdivision);
-        Task Delete(int countrySubdivisionId);
         Task<IEnumerable<CountrySubdivisionDto>> GetMatchingCountrySubdivisions(CountrySubdivisionDto countrySubdivision);
     }
 }
