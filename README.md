@@ -1,2 +1,2 @@
 # BaseClassLibraries
-[![Build Status: AppVeyor](https://ci.appveyor.com/api/projects/status/github/peinearydevelopment/baseclasslibraries?branch=master&svg=true)](https://ci.appveyor.com/project/peinearydevelopment/baseclasslibraries)
+[![Build Status: AppVeyor](https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva/branch/master?svg=true)](https://ci.appveyor.com/project/peinearydevelopment/baseclasslibraries)
