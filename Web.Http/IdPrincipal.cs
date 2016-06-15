@@ -1,4 +1,4 @@
-﻿namespace Apis
+﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.Web.Http
 {
     using System.Security.Principal;
 

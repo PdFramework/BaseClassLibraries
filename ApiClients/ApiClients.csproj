@@ -54,13 +54,13 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Exceptions\Exceptions.csproj">
-      <Project>{0C42EA65-15B6-459D-949A-85C88A7B30E4}</Project>
-      <Name>Exceptions</Name>
-    </ProjectReference>
+    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
   </ItemGroup>
   <ItemGroup>
-    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+    <ProjectReference Include="..\Contracts\Contracts.csproj">
+      <Project>{158C0B9A-B0C0-4436-8962-926C4FFB25FA}</Project>
+      <Name>Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

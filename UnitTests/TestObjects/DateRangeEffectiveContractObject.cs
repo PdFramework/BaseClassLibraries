@@ -1,8 +1,8 @@
 ﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.UnitTests.TestObjects
 {
-    using DataAccess.Contracts;
+    using Contracts;
 
-    public class DateRangeEffectiveDtoObject : DateRangeEffectiveDtoBase<int>
+    public class DateRangeEffectiveContractObject : DateRangeEffectiveContractBase<int>
     {
         public string Property { get; set; }
         public virtual string VirtualProperty { get; set; }

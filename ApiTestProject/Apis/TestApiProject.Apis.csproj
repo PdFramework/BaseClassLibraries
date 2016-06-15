@@ -63,19 +63,16 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiControllerExtensions.cs" />
-    <Compile Include="BaseApiController.cs" />
     <Compile Include="Config\AutoMapperConfig.cs" />
     <Compile Include="Config\UnityConfig.cs" />
     <Compile Include="Config\WebApiConfig.cs" />
+    <Compile Include="ContractValidators\CountrySubdivisionValidator.cs" />
+    <Compile Include="ContractValidators\CountryValidator.cs" />
     <Compile Include="Controllers\CountriesController.cs" />
     <Compile Include="Controllers\CountrySubdivisionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="IdPrincipal.cs" />
-    <Compile Include="IIdPrincipal.cs" />
-    <Compile Include="NoContentResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +96,10 @@
     <ProjectReference Include="..\..\DataAccess\DataAccess.csproj">
       <Project>{67DBD66A-2EF8-4672-BE74-CE162CE8E097}</Project>
       <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Web.Http\Web.Http.csproj">
+      <Project>{F4B66720-0EAD-4094-98D9-0F76A0B8508D}</Project>
+      <Name>Web.Http</Name>
     </ProjectReference>
     <ProjectReference Include="..\Contracts\TestApiProject.Contracts.csproj">
       <Project>{AF49C378-22B0-4CD9-A1B9-382140C9F0D9}</Project>

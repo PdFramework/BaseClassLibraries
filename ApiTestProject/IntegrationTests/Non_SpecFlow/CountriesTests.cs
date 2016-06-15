@@ -1,6 +1,6 @@
 ﻿namespace IntegrationTests.Non_SpecFlow
 {
-    using PeinearyDevelopment.Framework.BaseClassLibraries.Exceptions;
+    using PeinearyDevelopment.Framework.BaseClassLibraries.Contracts;
 
     using ApiClients;
     using Contracts;
@@ -138,7 +138,7 @@
                 var softDeletedAddress = await CountriesClient.GetCountry(countryId);
                 Assert.IsTrue(softDeletedAddress.EffectiveEndDate > DateTime.UtcNow.AddSeconds(-5) && softDeletedAddress.EffectiveEndDate <= DateTime.UtcNow);
 
-                var uri = new Uri(Path.Combine(ConfigurationManager.AppSettings["Countries.Endpoint"], "v1/Countries", countryId.ToString(), "force"));
+                var uri = new Uri(Path.Combine(ConfigurationManager.AppSettings[Constants.ApiEndpointKey], Routes.CountryV1BaseRoute, countryId.ToString(), "force"));
 
                 using (var client = new HttpClient())
                 {

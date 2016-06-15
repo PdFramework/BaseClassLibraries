@@ -1,12 +1,14 @@
 ﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.UnitTests
 {
-    using Data.Entity.Testing.Moq;
+    using Data.Entity.Testing.Moqing;
+
     using TestObjects;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Moq;
     using System;
     using System.Collections.Generic;
+    using System.Data.Entity.Core;
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -18,9 +20,9 @@
         {
             new DateRangeEffectiveDtoObject
             {
-                Id = StaticTestValues.ValidDateRangeEffectiveDtoObjectId1,
-                Name = StaticTestValues.ValidName1,
-                Description = StaticTestValues.ValidDescription1,
+                Id = StaticTestValues.ValidId1,
+                Property = StaticTestValues.ValidProperty1,
+                VirtualProperty = StaticTestValues.ValidVirtualProperty1,
                 EffectiveStartDate = StaticTestValues.EffectiveStartDateTimeOffset1,
                 EffectiveEndDate = StaticTestValues.EffectiveEndDateTimeOffset1,
                 CreatedByUserId = StaticTestValues.CreatedByUserId1,
@@ -30,9 +32,9 @@
             },
             new DateRangeEffectiveDtoObject
             {
-                Id = StaticTestValues.ValidDateRangeEffectiveDtoObjectId2,
-                Name = StaticTestValues.ValidName2,
-                Description = StaticTestValues.ValidDescription2
+                Id = StaticTestValues.ValidId2,
+                Property = StaticTestValues.ValidProperty2,
+                VirtualProperty = StaticTestValues.ValidVirtualProperty2
             }
         }.AsQueryable();
         #endregion
@@ -66,9 +68,9 @@
         [TestCategory("DbContextBase Read")]
         public async Task Given_ATestDtoObjectId_When_GetIsInvoked_Then_ATestDtoObjectShouldBeReturned()
         {
-            var testDtoObject = await DbContextBase.Read(StaticTestValues.ValidDateRangeEffectiveDtoObjectId1);
+            var testDtoObject = await DbContextBase.Read(StaticTestValues.ValidId1);
 
-            Assert.AreEqual(StaticTestValues.ValidDateRangeEffectiveDtoObjectId1, testDtoObject.Id);
+            Assert.AreEqual(StaticTestValues.ValidId1, testDtoObject.Id);
         }
 
         [TestMethod]
@@ -77,11 +79,11 @@
         {
             try
             {
-                await DbContextBase.Read(StaticTestValues.InvalidDateRangeEffectiveDtoObjectId1);
+                await DbContextBase.Read(StaticTestValues.InvalidId1);
             }
             catch (Exception ex)
             {
-                Assert.IsInstanceOfType(ex, typeof(KeyNotFoundException));
+                Assert.IsInstanceOfType(ex, typeof(ObjectNotFoundException));
             }
         }
         #endregion
@@ -115,9 +117,9 @@
         {
             var testObjectWithUpdates = new DateRangeEffectiveDtoObject
             {
-                Id = StaticTestValues.ValidDateRangeEffectiveDtoObjectId1,
-                Name = StaticTestValues.ValidName2,
-                Description = StaticTestValues.ValidDescription2,
+                Id = StaticTestValues.ValidId1,
+                Property = StaticTestValues.ValidProperty2,
+                VirtualProperty = StaticTestValues.ValidVirtualProperty2,
                 EffectiveStartDate = StaticTestValues.EffectiveStartDateTimeOffset2,
                 EffectiveEndDate = StaticTestValues.EffectiveEndDateTimeOffset2,
                 CreatedByUserId = StaticTestValues.CreatedByUserId2,
@@ -137,9 +139,9 @@
         {
             var testObjectWithUpdates = new DateRangeEffectiveDtoObject
             {
-                Id = StaticTestValues.ValidDateRangeEffectiveDtoObjectId1,
-                Name = StaticTestValues.ValidName2,
-                Description = StaticTestValues.ValidDescription2,
+                Id = StaticTestValues.ValidId1,
+                Property = StaticTestValues.ValidProperty2,
+                VirtualProperty = StaticTestValues.ValidVirtualProperty2,
                 EffectiveStartDate = StaticTestValues.EffectiveStartDateTimeOffset2,
                 EffectiveEndDate = StaticTestValues.EffectiveEndDateTimeOffset2,
                 CreatedByUserId = StaticTestValues.CreatedByUserId2,
@@ -150,7 +152,7 @@
 
             var returnedObject = await DbContextBase.Update(testObjectWithUpdates);
 
-            Assert.AreEqual(StaticTestValues.ValidName2, returnedObject.Name);
+            Assert.AreEqual(StaticTestValues.ValidProperty2, returnedObject.Property);
             Assert.AreEqual(StaticTestValues.EffectiveStartDateTimeOffset2, returnedObject.EffectiveStartDate);
             Assert.AreEqual(StaticTestValues.EffectiveEndDateTimeOffset2, returnedObject.EffectiveEndDate);
             Assert.AreEqual(StaticTestValues.LastUpdatedByUserId2, returnedObject.LastUpdatedByUserId);
@@ -166,9 +168,9 @@
         {
             var testObjectWithUpdates = new DateRangeEffectiveDtoObject
             {
-                Id = StaticTestValues.ValidDateRangeEffectiveDtoObjectId1,
-                Name = StaticTestValues.ValidName2,
-                Description = StaticTestValues.ValidDescription2,
+                Id = StaticTestValues.ValidId1,
+                Property = StaticTestValues.ValidProperty2,
+                VirtualProperty = StaticTestValues.ValidVirtualProperty2,
                 EffectiveStartDate = StaticTestValues.EffectiveStartDateTimeOffset2,
                 EffectiveEndDate = StaticTestValues.EffectiveEndDateTimeOffset2,
                 CreatedByUserId = StaticTestValues.CreatedByUserId2,
@@ -179,8 +181,8 @@
 
             var returnedObject = await DbContextBase.Update(testObjectWithUpdates);
 
-            Assert.AreEqual(StaticTestValues.ValidDateRangeEffectiveDtoObjectId1, returnedObject.Id);
-            Assert.AreEqual(StaticTestValues.ValidDescription1, returnedObject.Description);
+            Assert.AreEqual(StaticTestValues.ValidId1, returnedObject.Id);
+            Assert.AreEqual(StaticTestValues.ValidVirtualProperty1, returnedObject.VirtualProperty);
             Assert.AreEqual(StaticTestValues.CreatedByUserId1, returnedObject.CreatedByUserId);
             Assert.AreEqual(StaticTestValues.CreatedOnDateTimeOffset1, returnedObject.CreatedOn);
         }
@@ -191,16 +193,16 @@
         [TestCategory("DbContextBase Delete")]
         public async Task Given_AValidTestDtoObjectId_When_DeleteIsInvoked_Then_RemoveMethodShouldOnlyBeInvokedOnce()
         {
-            await DbContextBase.Delete(StaticTestValues.ValidDateRangeEffectiveDtoObjectId1);
+            await DbContextBase.Delete(StaticTestValues.ValidId1);
 
-            MockDbSet.Verify(m => m.Remove(It.Is<DateRangeEffectiveDtoObject>(s => s.Id == StaticTestValues.ValidDateRangeEffectiveDtoObjectId1)), Times.Once());
+            MockDbSet.Verify(m => m.Remove(It.Is<DateRangeEffectiveDtoObject>(s => s.Id == StaticTestValues.ValidId1)), Times.Once());
         }
 
         [TestMethod]
         [TestCategory("DbContextBase Delete")]
         public async Task Given_AValidTestDtoObjectId_When_DeleteIsInvoked_Then_SaveChangesAsyncMethodShouldOnlyBeInvokedOnce()
         {
-            await DbContextBase.Delete(StaticTestValues.ValidDateRangeEffectiveDtoObjectId1);
+            await DbContextBase.Delete(StaticTestValues.ValidId1);
 
             MockDbContext.Verify(m => m.SaveChangesAsync(), Times.Once());
         }
@@ -211,7 +213,7 @@
         {
             try
             {
-                await DbContextBase.Delete(StaticTestValues.ValidDateRangeEffectiveDtoObjectId1);
+                await DbContextBase.Delete(StaticTestValues.ValidId1);
             }
             catch (Exception ex)
             {

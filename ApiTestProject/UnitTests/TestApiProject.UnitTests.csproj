@@ -54,7 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="CountriesControllerTests.cs" />
+    <Compile Include="CountryValidatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +68,10 @@
     <ProjectReference Include="..\..\DataAccess.Contracts\DataAccess.Contracts.csproj">
       <Project>{37630F58-AB43-4599-A0FB-8DE45C593B89}</Project>
       <Name>DataAccess.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Web.Http\Web.Http.csproj">
+      <Project>{F4B66720-0EAD-4094-98D9-0F76A0B8508D}</Project>
+      <Name>Web.Http</Name>
     </ProjectReference>
     <ProjectReference Include="..\Apis\TestApiProject.Apis.csproj">
       <Project>{7BDFDF0A-96E2-44B3-A94F-569DAEB64ECE}</Project>

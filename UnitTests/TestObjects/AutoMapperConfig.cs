@@ -1,7 +1,6 @@
-﻿namespace Apis.Config
+﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.UnitTests.TestObjects
 {
     using AutoMapper;
-    using AutoMapper.Mappers;
 
     public static class AutoMapperConfig
     {
@@ -11,7 +10,8 @@
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.AddConditionalObjectMapper().Where((s, d) => s.Name == d.Name + "Dto" || s.Name + "Dto" == d.Name);
+                cfg.CreateMap<DateRangeEffectiveDtoObject, DateRangeEffectiveContractObject>();
+                cfg.CreateMap<DateRangeEffectiveContractObject, DateRangeEffectiveDtoObject>();
             });
 
             Mapper = config.CreateMapper();

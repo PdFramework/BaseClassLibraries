@@ -27,8 +27,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApiProject.IntegrationT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClients", "ApiClients\ApiClients.csproj", "{BFD33B77-08B8-4FEC-9065-FE8A944E64D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{0C42EA65-15B6-459D-949A-85C88A7B30E4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{158C0B9A-B0C0-4436-8962-926C4FFB25FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Contracts", "DataAccess.Contracts\DataAccess.Contracts.csproj", "{37630F58-AB43-4599-A0FB-8DE45C593B89}"
@@ -39,7 +37,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\Unit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Entity.UnitTesting", "Data.Entity.UnitTesting\Data.Entity.UnitTesting.csproj", "{BD593398-F60B-486E-8F5A-2F8586048E76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Entity.Testing.Moq", "Data.Entity.Testing.Moq\Data.Entity.Testing.Moq.csproj", "{F0C14A0E-2C99-48C7-92A6-6991B5CC505B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Entity.Testing.Moqing", "Data.Entity.Testing.Moq\Data.Entity.Testing.Moqing.csproj", "{F0C14A0E-2C99-48C7-92A6-6991B5CC505B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Http", "Web.Http\Web.Http.csproj", "{F4B66720-0EAD-4094-98D9-0F76A0B8508D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,10 +79,6 @@ Global
 		{BFD33B77-08B8-4FEC-9065-FE8A944E64D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFD33B77-08B8-4FEC-9065-FE8A944E64D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFD33B77-08B8-4FEC-9065-FE8A944E64D2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0C42EA65-15B6-459D-949A-85C88A7B30E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C42EA65-15B6-459D-949A-85C88A7B30E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C42EA65-15B6-459D-949A-85C88A7B30E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C42EA65-15B6-459D-949A-85C88A7B30E4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{158C0B9A-B0C0-4436-8962-926C4FFB25FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{158C0B9A-B0C0-4436-8962-926C4FFB25FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{158C0B9A-B0C0-4436-8962-926C4FFB25FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -107,6 +103,10 @@ Global
 		{F0C14A0E-2C99-48C7-92A6-6991B5CC505B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0C14A0E-2C99-48C7-92A6-6991B5CC505B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0C14A0E-2C99-48C7-92A6-6991B5CC505B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4B66720-0EAD-4094-98D9-0F76A0B8508D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4B66720-0EAD-4094-98D9-0F76A0B8508D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4B66720-0EAD-4094-98D9-0F76A0B8508D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4B66720-0EAD-4094-98D9-0F76A0B8508D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

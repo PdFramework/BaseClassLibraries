@@ -1,4 +1,4 @@
-﻿namespace Apis
+﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.Web.Http
 {
     using System.Web.Http;
 
@@ -6,7 +6,7 @@
     {
         public static NoContentResult NoContent(this ApiController controller)
         {
-            return new NoContentResult(controller.Request);
+            return controller == null ? new NoContentResult() : new NoContentResult(controller.Request);
         }
     }
 }
