@@ -83,7 +83,7 @@
       <Project>{158C0B9A-B0C0-4436-8962-926C4FFB25FA}</Project>
       <Name>Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Data.Entity.Testing.Moq\Data.Entity.Testing.Moqing.csproj">
+    <ProjectReference Include="..\Data.Entity.Testing.Moqing\Data.Entity.Testing.Moqing.csproj">
       <Project>{F0C14A0E-2C99-48C7-92A6-6991B5CC505B}</Project>
       <Name>Data.Entity.Testing.Moqing</Name>
     </ProjectReference>
