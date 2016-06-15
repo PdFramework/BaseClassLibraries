@@ -1,5 +1,4 @@
-﻿
-namespace PeinearyDevelopment.Framework.BaseClassLibraries.DataAccess.Contracts
+﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.DataAccess.Contracts
 {
     using System;
 

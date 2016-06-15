@@ -1,5 +1,7 @@
 ﻿namespace Apis
 {
+    using PeinearyDevelopment.Framework.BaseClassLibraries.Web.Http;
+
     using System;
     using Config;
 

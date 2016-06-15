@@ -77,10 +77,6 @@
       <Project>{158C0B9A-B0C0-4436-8962-926C4FFB25FA}</Project>
       <Name>Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Exceptions\Exceptions.csproj">
-      <Project>{0C42EA65-15B6-459D-949A-85C88A7B30E4}</Project>
-      <Name>Exceptions</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ApiClients\TestApiProject.ApiClients.csproj">
       <Project>{F00979DA-7E8F-4967-8E2D-7FC3D25F2135}</Project>
       <Name>TestApiProject.ApiClients</Name>

@@ -1,6 +1,6 @@
 ﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.ApiClients
 {
-    using Exceptions;
+    using Contracts;
 
     using Newtonsoft.Json;
     using Newtonsoft.Json.Serialization;

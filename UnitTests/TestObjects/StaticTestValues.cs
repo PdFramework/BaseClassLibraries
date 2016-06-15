@@ -17,13 +17,13 @@
             LastUpdatedOnDateTimeOffset2 = DateTimeOffset.UtcNow;
         }
 
-        public const int InvalidDateRangeEffectiveDtoObjectId1 = -1;
-        public const int ValidDateRangeEffectiveDtoObjectId1 = 1;
-        public const int ValidDateRangeEffectiveDtoObjectId2 = 2;
-        public const string ValidName1 = "ValidName1";
-        public const string ValidName2 = "ValidName2";
-        public const string ValidDescription1 = "ValidDescription1";
-        public const string ValidDescription2 = "ValidDescription2";
+        public const int InvalidId1 = -1;
+        public const int ValidId1 = 1;
+        public const int ValidId2 = 2;
+        public const string ValidProperty1 = "ValidProperty1";
+        public const string ValidProperty2 = "ValidProperty2";
+        public const string ValidVirtualProperty1 = "ValidVirtualProperty1";
+        public const string ValidVirtualProperty2 = "ValidVirtualProperty2";
         public static DateTimeOffset EffectiveStartDateTimeOffset1 { get; }
         public static DateTimeOffset EffectiveStartDateTimeOffset2 { get; }
         public static DateTimeOffset? EffectiveEndDateTimeOffset1 { get; }
@@ -38,5 +38,11 @@
         public static int? LastUpdatedByUserId2 = 5;
         public static DateTimeOffset? LastUpdatedOnDateTimeOffset1 { get; }
         public static DateTimeOffset? LastUpdatedOnDateTimeOffset2 { get; }
+
+        public const string ControllerName = "DateRangeEffectiveContractObjects";
+        public const string GetDateRangeEffectiveContractObjectRouteName = "GetDateRangeEffectiveContractObject";
+
+        public const string ContractValidatorErrorMessage1 = "Contract failed validation.";
+        public const string ContractValidatorErrorMessage2 = "Contract is bad.";
     }
 }

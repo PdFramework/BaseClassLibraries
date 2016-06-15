@@ -1,9 +1,11 @@
-﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.Exceptions
+﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.Contracts
 {
     using System;
+    using System.Globalization;
     using System.Net.Http;
     using System.Runtime.Serialization;
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1032:ImplementStandardExceptionConstructors")]
     [Serializable]
     public class ApiInvokerException : Exception
     {
@@ -11,6 +13,7 @@
         {
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1026:DefaultParametersShouldNotBeUsed")]
         public ApiInvokerException(HttpResponseMessage message, string httpResponseMessageContent = null) : base(CreateMessage(message, httpResponseMessageContent))
         {
         }
@@ -23,7 +26,7 @@
         {
             if (httpResponseMessageContent == null) httpResponseMessageContent = message.Content.ReadAsStringAsync().Result;
 
-            return $"{{ statusCode: {message.StatusCode}, content: {httpResponseMessageContent} }}";
+            return string.Format(CultureInfo.InvariantCulture, "{{ statusCode: {0}, content: {1} }}", message.StatusCode, httpResponseMessageContent);
         }
     }
 }

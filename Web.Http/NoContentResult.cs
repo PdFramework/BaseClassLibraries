@@ -1,4 +1,4 @@
-﻿namespace Apis
+﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.Web.Http
 {
     using System.Net;
     using System.Net.Http;
@@ -9,6 +9,10 @@
     public class NoContentResult : IHttpActionResult
     {
         private readonly HttpRequestMessage _request;
+
+        public NoContentResult()
+        {
+        }
 
         public NoContentResult(HttpRequestMessage request)
         {

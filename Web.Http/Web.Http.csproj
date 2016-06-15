@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0C42EA65-15B6-459D-949A-85C88A7B30E4}</ProjectGuid>
+    <ProjectGuid>{F4B66720-0EAD-4094-98D9-0F76A0B8508D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PeinearyDevelopment.Framework.BaseClassLibraries.Exceptions</RootNamespace>
-    <AssemblyName>PeinearyDevelopment.Framework.BaseClassLibraries.Exceptions</AssemblyName>
+    <RootNamespace>PeinearyDevelopment.Framework.BaseClassLibraries.Web.Http</RootNamespace>
+    <AssemblyName>PeinearyDevelopment.Framework.BaseClassLibraries.Web.Http</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -21,8 +21,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>
-    </CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>Web.Http.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,8 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>
-    </CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>Web.Http.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -45,18 +43,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiInvokerException.cs" />
+    <Compile Include="ApiControllerExtensions.cs" />
+    <Compile Include="SecurityApiControllerBase.cs" />
+    <Compile Include="DateRangeEffectiveBaseApiControllerBase.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="IContractValidator.cs" />
+    <Compile Include="IdBaseApiControllerBase.cs" />
+    <Compile Include="IdPrincipal.cs" />
+    <Compile Include="IIdPrincipal.cs" />
+    <Compile Include="NoContentResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+    <Content Include="project.json" />
+    <None Include="Web.Http.ruleset" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Contracts\Contracts.csproj">
+      <Project>{158C0B9A-B0C0-4436-8962-926C4FFB25FA}</Project>
+      <Name>Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess.Contracts\DataAccess.Contracts.csproj">
+      <Project>{37630F58-AB43-4599-A0FB-8DE45C593B89}</Project>
+      <Name>DataAccess.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

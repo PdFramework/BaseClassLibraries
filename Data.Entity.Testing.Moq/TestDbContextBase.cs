@@ -1,6 +1,4 @@
-﻿using Moq;
-
-namespace PeinearyDevelopment.Framework.BaseClassLibraries.Data.Entity.Testing.Moq
+﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.Data.Entity.Testing.Moqing
 {
     using UnitTesting.TestDoubles;
     using DataAccess;
@@ -10,6 +8,7 @@ namespace PeinearyDevelopment.Framework.BaseClassLibraries.Data.Entity.Testing.M
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using System.Linq;
+    using Moq;
 
     public class TestDbContextBase<TDto, TId> where TDto : IdDtoBase<TId>
     {

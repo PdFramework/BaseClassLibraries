@@ -10,22 +10,22 @@
     {
         public async Task<Country> GetCountry(int id)
         {
-            return await ApiInvoker.Get<Country, int>(Constants.ApiEndpointKey, Constants.CountriesApiBaseRoute, id);
+            return await ApiInvoker.Get<Country, int>(Constants.ApiEndpointKey, Routes.CountryV1BaseRoute, id);
         }
 
         public async Task<Country> CreateCountry(Country country)
         {
-            return await ApiInvoker.Create(Constants.ApiEndpointKey, Constants.CountriesApiBaseRoute, country);
+            return await ApiInvoker.Create(Constants.ApiEndpointKey, Routes.CountryV1BaseRoute, country);
         }
 
         public async Task<Country> UpdateCountry(Country country)
         {
-            return await ApiInvoker.Update(Constants.ApiEndpointKey, Constants.CountriesApiBaseRoute, country);
+            return await ApiInvoker.Update(Constants.ApiEndpointKey, Routes.CountryV1BaseRoute, country);
         }
 
         public async Task DeleteCountry(int id)
         {
-            await ApiInvoker.Delete(Constants.ApiEndpointKey, Constants.CountriesApiBaseRoute, id);
+            await ApiInvoker.Delete(Constants.ApiEndpointKey, Routes.CountryV1BaseRoute, id);
         }
     }
 }

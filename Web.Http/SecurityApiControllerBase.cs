@@ -1,8 +1,8 @@
-﻿namespace Apis
+﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.Web.Http
 {
     using System.Web.Http;
 
-    public class BaseApiController : ApiController
+    public class SecurityApiControllerBase : ApiController
     {
         private IIdPrincipal _idPrincipal = null;
 

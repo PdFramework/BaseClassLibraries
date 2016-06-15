@@ -3,8 +3,8 @@
     using Contracts;
 
     using System;
-    using System.Collections.Generic;
     using System.Data.Entity;
+    using System.Data.Entity.Core;
     using System.Linq;
     using System.Linq.Expressions;
     using System.Reflection;
@@ -86,7 +86,7 @@
         private async Task<TDto> SafeRead(TId id, bool shouldTrack)
         {
             var dto = await GetEntity<TDto, TId>(e => e.Id, id, shouldTrack);
-            if (dto == null) throw new KeyNotFoundException();
+            if (dto == null) throw new ObjectNotFoundException();
 
             return dto;
         }

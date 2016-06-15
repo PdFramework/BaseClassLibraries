@@ -1,6 +1,6 @@
 ﻿namespace IntegrationTests.SpecFlow
 {
-    using PeinearyDevelopment.Framework.BaseClassLibraries.Exceptions;
+    using PeinearyDevelopment.Framework.BaseClassLibraries.Contracts;
 
     using ApiClients;
     using Contracts;
@@ -226,7 +226,7 @@
         {
             foreach (var testCountryToCleanup in testCountriesToCleanup)
             {
-                var uri = new Uri(Path.Combine(ConfigurationManager.AppSettings["Countries.Endpoint"], "v1/Countries", testCountryToCleanup.Id.ToString(), "force"));
+                var uri = new Uri(Path.Combine(ConfigurationManager.AppSettings[Constants.ApiEndpointKey], Routes.CountryV1BaseRoute, testCountryToCleanup.Id.ToString(), "force"));
 
                 using (var client = new HttpClient())
                 {
