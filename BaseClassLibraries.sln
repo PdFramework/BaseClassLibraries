@@ -37,7 +37,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\Unit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Entity.UnitTesting", "Data.Entity.UnitTesting\Data.Entity.UnitTesting.csproj", "{BD593398-F60B-486E-8F5A-2F8586048E76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Entity.Testing.Moqing", "Data.Entity.Testing.Moq\Data.Entity.Testing.Moqing.csproj", "{F0C14A0E-2C99-48C7-92A6-6991B5CC505B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Entity.Testing.Moqing", "Data.Entity.Testing.Moqing\Data.Entity.Testing.Moqing.csproj", "{F0C14A0E-2C99-48C7-92A6-6991B5CC505B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Http", "Web.Http\Web.Http.csproj", "{F4B66720-0EAD-4094-98D9-0F76A0B8508D}"
 EndProject
