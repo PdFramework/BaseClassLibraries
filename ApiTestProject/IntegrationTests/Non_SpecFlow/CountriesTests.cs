@@ -51,7 +51,7 @@
 
             try
             {
-                var usReturned = await CountriesClient.CreateCountry(us);
+                var usReturned = await CountriesClient.Create(us);
 
                 Assert.AreEqual(TestData.UsCountryAlpha2Code, usReturned.Alpha2Code);
                 Assert.AreEqual(TestData.CountryCreatedById, usReturned.CreatedByUserId);
@@ -77,7 +77,7 @@
         {
             try
             {
-                var countryReturned = await CountriesClient.GetCountry(country.Id);
+                var countryReturned = await CountriesClient.Get(country.Id);
 
                 Assert.AreEqual(country.Alpha2Code, countryReturned.Alpha2Code);
                 Assert.AreEqual(country.CreatedByUserId, countryReturned.CreatedByUserId);
@@ -108,7 +108,7 @@
                 country.LastUpdatedByUserId = TestData.CountryLastUpdatedById;
                 country.LastUpdatedOn = TestData.NonServiceGeneratedCountryLastUpdatedOn;
 
-                var countryReturned = await CountriesClient.UpdateCountry(country);
+                var countryReturned = await CountriesClient.Update(country);
 
                 Assert.AreEqual(TestData.CaCountryAbbreviation, countryReturned.Alpha2Code);
                 Assert.AreEqual(TestData.CaCountryName, countryReturned.FullName);
@@ -134,8 +134,8 @@
         {
             try
             {
-                await CountriesClient.DeleteCountry(countryId);
-                var softDeletedAddress = await CountriesClient.GetCountry(countryId);
+                await CountriesClient.Delete(countryId);
+                var softDeletedAddress = await CountriesClient.Get(countryId);
                 Assert.IsTrue(softDeletedAddress.EffectiveEndDate > DateTime.UtcNow.AddSeconds(-5) && softDeletedAddress.EffectiveEndDate <= DateTime.UtcNow);
 
                 var uri = new Uri(Path.Combine(ConfigurationManager.AppSettings[Constants.ApiEndpointKey], Routes.CountryV1BaseRoute, countryId.ToString(), "force"));
@@ -155,7 +155,7 @@
 
             try
             {
-                await CountriesClient.GetCountry(countryId);
+                await CountriesClient.Get(countryId);
                 Assert.Fail($"Address id: {countryId} was found after it should have been deleted.");
             }
             catch (ApiInvokerException)

@@ -7,8 +7,8 @@
     <ProjectGuid>{BFD33B77-08B8-4FEC-9065-FE8A944E64D2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PeinearyDevelopment.Framework.BaseClassLibraries.ApiClients</RootNamespace>
-    <AssemblyName>PeinearyDevelopment.Framework.BaseClassLibraries.ApiClients</AssemblyName>
+    <RootNamespace>PeinearyDevelopment.Framework.BaseClassLibraries.Clients.Apis</RootNamespace>
+    <AssemblyName>PeinearyDevelopment.Framework.BaseClassLibraries.Clients.Apis</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

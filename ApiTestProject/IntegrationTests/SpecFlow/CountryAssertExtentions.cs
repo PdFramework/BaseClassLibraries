@@ -33,10 +33,35 @@ namespace IntegrationTests.SpecFlow
         {
             //TODO: figure out how to add a user for integration tests
             Assert.AreEqual(-365, createdCountry.CreatedByUserId);
-            Assert.IsTrue(DateTimeOffset.UtcNow.AddSeconds(-1) < createdCountry.CreatedOn.UtcDateTime && createdCountry.CreatedOn.UtcDateTime < DateTimeOffset.UtcNow.AddSeconds(1));
+            DateTimeOffsetInRecentlyUpdatedRange(createdCountry.CreatedOn);
 
             Assert.IsNull(createdCountry.LastUpdatedByUserId);
             Assert.IsNull(createdCountry.LastUpdatedOn);
+        }
+
+        public static void UpdatedCountryAuditInformationIsCorrect(Country createdCountry, Country lastUpdatedCountry)
+        {
+            //TODO: figure out how to add a user for integration tests
+            Assert.AreEqual(createdCountry.CreatedByUserId, createdCountry.CreatedByUserId);
+            Assert.AreEqual(createdCountry.CreatedOn, createdCountry.CreatedOn);
+
+            Assert.AreEqual(-365, lastUpdatedCountry.LastUpdatedByUserId);
+            DateTimeOffsetInRecentlyUpdatedRange(lastUpdatedCountry.LastUpdatedOn);
+        }
+
+        public static void SoftDeletedCountryEffectiveEndDateIsCorrect(Country softDeletedCountry)
+        {
+            DateTimeOffsetInRecentlyUpdatedRange(softDeletedCountry.EffectiveEndDate);
+        }
+
+        public static void DateTimeOffsetInRecentlyUpdatedRange(DateTimeOffset dateTimeOffset)
+        {
+            Assert.IsTrue(DateTimeOffset.UtcNow.AddSeconds(-1) < dateTimeOffset.UtcDateTime && dateTimeOffset.UtcDateTime < DateTimeOffset.UtcNow.AddSeconds(1));
+        }
+
+        public static void DateTimeOffsetInRecentlyUpdatedRange(DateTimeOffset? dateTimeOffset)
+        {
+            Assert.IsTrue(DateTimeOffset.UtcNow.AddSeconds(-1) < dateTimeOffset.Value.UtcDateTime && dateTimeOffset.Value.UtcDateTime < DateTimeOffset.UtcNow.AddSeconds(1));
         }
     }
 }

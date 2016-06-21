@@ -1,17 +1,19 @@
 ﻿namespace IntegrationTests.SpecFlow
 {
+    using PeinearyDevelopment.Framework.BaseClassLibraries.Testing.DataGenerator;
+    using PeinearyDevelopment.Framework.BaseClassLibraries.Testing.SpecFlow;
+
+    using Contracts;
+
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Linq;
-    using System.Text;
-    using Contracts;
 
-    public class CountryGenerator
+    public class CountryGenerator : IItemsGenerator<Country, int>
     {
-        public Country GenerateValidCountry()
+        public Country GenerateValidItem()
         {
-            var effectiveStartDate = GenerateRandomDateTimeOffset();
+            var effectiveStartDate = RandomDataGenerator.GenerateRandomDateTimeOffset();
 
             return new Country
             {
@@ -19,7 +21,7 @@
                 Alpha3Code = Alpha3Code,
                 CreatedByUserId = NonServiceGeneratedCreatedById,
                 CreatedOn = NonServiceGeneratedCountryCreatedOn,
-                EffectiveEndDate = GenerateRandomDateTimeOffset(effectiveStartDate),
+                EffectiveEndDate = RandomDataGenerator.GenerateRandomDateTimeOffset(effectiveStartDate),
                 EffectiveStartDate = effectiveStartDate,
                 FullName = Name,
                 Id = NonServiceGeneratedId,
@@ -32,87 +34,42 @@
             };
         }
 
-        public Country GenerateUpdatedValidCountry(int id)
+        public Country GenerateValidUpdatedItem(int id)
         {
-            var country = GenerateValidCountry();
+            var country = GenerateValidItem();
             country.Id = id;
             return country;
         }
 
-        private static DateTimeOffset NonServiceGeneratedCountryCreatedOn => GenerateRandomDateTimeOffset();
-        private static DateTimeOffset NonServiceGeneratedCountryLastUpdatedOn => GenerateRandomDateTimeOffset();
+        private static DateTimeOffset NonServiceGeneratedCountryCreatedOn => RandomDataGenerator.GenerateRandomDateTimeOffset();
+        private static DateTimeOffset NonServiceGeneratedCountryLastUpdatedOn => RandomDataGenerator.GenerateRandomDateTimeOffset();
 
-        private static int NonServiceGeneratedCreatedById => GenerateRandomInteger();
-        private static int NonServiceGeneratedCreatedByIdForUpdate => GenerateRandomInteger();
-        private static int NonServiceGeneratedId => GenerateRandomInteger();
-        private static int NonServiceGeneratedLastUpdatedById => GenerateRandomInteger();
+        private static int NonServiceGeneratedCreatedById => RandomDataGenerator.GenerateRandomInt32();
+        private static int NonServiceGeneratedCreatedByIdForUpdate => RandomDataGenerator.GenerateRandomInt32();
+        private static int NonServiceGeneratedId => RandomDataGenerator.GenerateRandomInt32();
+        private static int NonServiceGeneratedLastUpdatedById => RandomDataGenerator.GenerateRandomInt32();
 
-        private static string Alpha2Code => GenerateRandomString(2);
-        private static string Alpha3Code => GenerateRandomString(3);
+        private static string Alpha2Code => RandomDataGenerator.GenerateRandomString(2);
+        private static string Alpha3Code => RandomDataGenerator.GenerateRandomString(3);
         private static int Iso3166Code => GenerateRandomIso3166Code();
-        private static string Name => GenerateRandomString(50);
+        private static string Name => RandomDataGenerator.GenerateRandomString(50);
         private static string PhoneNumberRegex => GenerateRandomPhoneNumberRegex();
         private static string PostalCodeRegex => GenerateRandomPostalCodeRegex();
-        private static string ShortName => GenerateRandomString(10);
-
-        //http://stackoverflow.com/questions/1122483/1874522/random-string-generator-returning-same-string#answer-1122519
-        private static readonly Random Random = new Random((int)DateTime.Now.Ticks);
-        private static string GenerateRandomString(int size)
-        {
-            var builder = new StringBuilder();
-            for (var i = 0; i < size; i++)
-            {
-                builder.Append(GenerateRandomIterableItem<string, char>("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ `1234567890-=[]\\;',./~!@#$%^&*()_+|}{\":?><\t\n"));
-            }
-
-            return builder.ToString();
-        }
-
-        private static int GenerateRandomInteger()
-        {
-            return Random.Next();
-        }
+        private static string ShortName => RandomDataGenerator.GenerateRandomString(10);
 
         private static int GenerateRandomIso3166Code()
         {
-            return Random.Next(999);//.ToString("D3");
-        }
-
-        private static DateTimeOffset GenerateRandomDateTimeOffset(DateTimeOffset? lowerBoundDateTimeOffset = null)
-        {
-            var lowerBoundTimeSpan = lowerBoundDateTimeOffset == null ? (TimeSpan?)null : new TimeSpan(lowerBoundDateTimeOffset.Value.Ticks);
-            var lowerBoundTimeSpanHours = lowerBoundTimeSpan?.Hours ?? TimeSpan.MinValue.Hours;
-            var lowerBoundTimeSpanMinutes = lowerBoundTimeSpan?.Minutes ?? TimeSpan.MinValue.Minutes;
-            const int upperBoundTimeSpanHours = 14;
-            return new DateTimeOffset(
-                Random.Next(lowerBoundDateTimeOffset?.Year ?? DateTimeOffset.MinValue.Year, DateTimeOffset.MaxValue.Year),
-                Random.Next(lowerBoundDateTimeOffset?.Month ?? DateTimeOffset.MinValue.Month, DateTimeOffset.MaxValue.Month),
-                Random.Next(lowerBoundDateTimeOffset?.Day ?? DateTimeOffset.MinValue.Day, DateTimeOffset.MaxValue.Day),
-                Random.Next(lowerBoundDateTimeOffset?.Hour ?? DateTimeOffset.MinValue.Hour, DateTimeOffset.MaxValue.Hour),
-                Random.Next(lowerBoundDateTimeOffset?.Minute ?? DateTimeOffset.MinValue.Minute, DateTimeOffset.MaxValue.Minute),
-                Random.Next(lowerBoundDateTimeOffset?.Second ?? DateTimeOffset.MinValue.Second, DateTimeOffset.MaxValue.Second),
-                Random.Next(lowerBoundDateTimeOffset?.Millisecond ?? DateTimeOffset.MinValue.Millisecond, DateTimeOffset.MaxValue.Millisecond),
-                new TimeSpan(
-                    0, // must be within 14 hours
-                    Random.Next(lowerBoundTimeSpanHours < upperBoundTimeSpanHours ? lowerBoundTimeSpanHours : upperBoundTimeSpanHours - 1, upperBoundTimeSpanHours),
-                    Random.Next(lowerBoundTimeSpanMinutes < TimeSpan.MaxValue.Minutes ? lowerBoundTimeSpanMinutes : TimeSpan.MaxValue.Minutes - 1, TimeSpan.MaxValue.Minutes),
-                    0, // must be in whole minutes
-                    0));
+            return RandomDataGenerator.GenerateRandomInt32(999);//.ToString("D3");
         }
 
         private static string GenerateRandomPhoneNumberRegex()
         {
-            return GenerateRandomIterableItem<ReadOnlyDictionary<string, string>, KeyValuePair<string, string>>(PhoneNumberRegexes).Value;
+            return RandomDataGenerator.GenerateRandomItemFromEnumerable<ReadOnlyDictionary<string, string>, KeyValuePair<string, string>>(PhoneNumberRegexes).Value;
         }
 
         private static string GenerateRandomPostalCodeRegex()
         {
-            return GenerateRandomIterableItem<ReadOnlyDictionary<string, string>, KeyValuePair<string, string>>(PostalRegexes).Value;
-        }
-
-        private static T GenerateRandomIterableItem<TIterable, T>(TIterable iterable) where TIterable : IEnumerable<T>
-        {
-            return iterable.ElementAt(Random.Next(0, iterable.Count() - 1));
+            return RandomDataGenerator.GenerateRandomItemFromEnumerable<ReadOnlyDictionary<string, string>, KeyValuePair<string, string>>(PostalRegexes).Value;
         }
 
         /* Regexes from here: http://regexlib.com/Search.aspx?k=postal+code

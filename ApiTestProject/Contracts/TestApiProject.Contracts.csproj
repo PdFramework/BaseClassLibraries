@@ -47,6 +47,7 @@
     <Compile Include="CountrySubdivision.cs" />
     <Compile Include="CountrySubdivisionType.cs" />
     <Compile Include="ErrorMessages.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="ICountrySubdivisionsClient.cs" />
     <Compile Include="ICountriesClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

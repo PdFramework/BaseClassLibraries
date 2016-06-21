@@ -1,6 +1,7 @@
 ﻿{
   "dependencies": {
     "Newtonsoft.Json": "8.0.3",
+    "Pickles.MSBuild": "2.7.0",
     "SpecFlow": "2.1.0"
   },
   "frameworks": {

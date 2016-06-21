@@ -26,7 +26,7 @@
         {
             if (httpResponseMessageContent == null) httpResponseMessageContent = message.Content.ReadAsStringAsync().Result;
 
-            return string.Format(CultureInfo.InvariantCulture, "{{ statusCode: {0}, content: {1} }}", message.StatusCode, httpResponseMessageContent);
+            return string.Format(CultureInfo.InvariantCulture, "{{ HttpStatusCode: {0}, StackTrace: {1} }}", message.StatusCode, httpResponseMessageContent);
         }
     }
 }

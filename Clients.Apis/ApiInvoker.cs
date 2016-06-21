@@ -1,9 +1,7 @@
-﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.ApiClients
+﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.Clients.Apis
 {
     using Contracts;
 
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Serialization;
     using System;
     using System.Configuration;
     using System.IO;
@@ -11,6 +9,8 @@
     using System.Net.Http;
     using System.Net.Http.Headers;
     using System.Threading.Tasks;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Serialization;
 
     public static class ApiInvoker
     {

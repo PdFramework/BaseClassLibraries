@@ -25,7 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApiProject.IntegrationT
 		{2408588C-4FE3-4DED-81A1-E6C9C9174CA6} = {2408588C-4FE3-4DED-81A1-E6C9C9174CA6}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClients", "ApiClients\ApiClients.csproj", "{BFD33B77-08B8-4FEC-9065-FE8A944E64D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clients.Apis", "Clients.Apis\Clients.Apis.csproj", "{BFD33B77-08B8-4FEC-9065-FE8A944E64D2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{158C0B9A-B0C0-4436-8962-926C4FFB25FA}"
 EndProject
@@ -40,6 +40,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Entity.Testing.Moqing", "Data.Entity.Testing.Moqing\Data.Entity.Testing.Moqing.csproj", "{F0C14A0E-2C99-48C7-92A6-6991B5CC505B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Http", "Web.Http\Web.Http.csproj", "{F4B66720-0EAD-4094-98D9-0F76A0B8508D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.DataGenerator", "Testing.DataGenerator\Testing.DataGenerator.csproj", "{70E58155-13FF-4A03-B3F1-A9A5ABCE19DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.SpecFlow", "Testing.SpecFlow\Testing.SpecFlow.csproj", "{3ED8D3A9-72BD-47C1-84A9-4EBB08648B92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -107,6 +111,14 @@ Global
 		{F4B66720-0EAD-4094-98D9-0F76A0B8508D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4B66720-0EAD-4094-98D9-0F76A0B8508D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4B66720-0EAD-4094-98D9-0F76A0B8508D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70E58155-13FF-4A03-B3F1-A9A5ABCE19DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70E58155-13FF-4A03-B3F1-A9A5ABCE19DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70E58155-13FF-4A03-B3F1-A9A5ABCE19DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70E58155-13FF-4A03-B3F1-A9A5ABCE19DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ED8D3A9-72BD-47C1-84A9-4EBB08648B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ED8D3A9-72BD-47C1-84A9-4EBB08648B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ED8D3A9-72BD-47C1-84A9-4EBB08648B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ED8D3A9-72BD-47C1-84A9-4EBB08648B92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,12 +1,8 @@
 ﻿namespace Contracts
 {
-    using System.Threading.Tasks;
+    using PeinearyDevelopment.Framework.BaseClassLibraries.Contracts;
 
-    public interface ICountriesClient
+    public interface ICountriesClient : IIdClientBase<Country, int>
     {
-        Task<Country> GetCountry(int id);
-        Task<Country> CreateCountry(Country country);
-        Task<Country> UpdateCountry(Country country);
-        Task DeleteCountry(int id);
     }
 }

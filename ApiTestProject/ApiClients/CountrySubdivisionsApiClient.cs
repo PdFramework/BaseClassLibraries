@@ -1,6 +1,6 @@
 ﻿namespace ApiClients
 {
-    using PeinearyDevelopment.Framework.BaseClassLibraries.ApiClients;
+    using PeinearyDevelopment.Framework.BaseClassLibraries.Clients.Apis;
 
     using Contracts;
 

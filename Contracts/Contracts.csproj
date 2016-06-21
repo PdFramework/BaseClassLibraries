@@ -45,9 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiInvokerException.cs" />
+    <Compile Include="ApiInvokerExceptionDetails.cs" />
     <Compile Include="DateRangeEffectiveContractBase.cs" />
     <Compile Include="ErrorMessages.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="IdContractBase.cs" />
+    <Compile Include="IIdClientBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
