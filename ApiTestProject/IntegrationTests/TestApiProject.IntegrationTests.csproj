@@ -28,7 +28,7 @@
     <Pickles_Generate>True</Pickles_Generate>
     <Pickles_DocumentationFormat>HTML</Pickles_DocumentationFormat>
     <Pickles_OutputDirectory>$(MSBuildProjectDirectory)\bin\Debug\Pickles</Pickles_OutputDirectory>
-    <Pickles_FeatureDirectory>$(MSBuildProjectDirectory)\SpecFlow</Pickles_FeatureDirectory>
+    <Pickles_FeatureDirectory>$(MSBuildProjectDirectory)</Pickles_FeatureDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -56,27 +56,28 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Non_SpecFlow\CountriesTests.cs" />
-    <Compile Include="Non_SpecFlow\TestData.cs" />
-    <Compile Include="SpecFlow\CountriesTests.feature.cs">
+    <Compile Include="CountryAssertExtentions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CountryGenerator.cs" />
+    <Compile Include="CountriesTestsSteps.cs" />
+    <Compile Include="CountriesTests.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CountriesTests.feature</DependentUpon>
     </Compile>
-    <Compile Include="SpecFlow\CountryAssertExtentions.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SpecFlow\CountryGenerator.cs" />
-    <Compile Include="SpecFlow\CountriesTestsSteps.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CountriesTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CountriesTests.feature.cs</LastGenOutput>
+      <CustomToolNamespace />
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="project.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="SpecFlow\CountriesTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CountriesTests.feature.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Contracts\Contracts.csproj">
@@ -121,11 +122,5 @@
   </Choose>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <Import Project="$(NuGetPackageRoot)\SpecFlow\2.1.0\tools\TechTalk.SpecFlow.targets" Condition="Exists('$(NuGetPackageRoot)\SpecFlow\2.1.0\tools\TechTalk.SpecFlow.targets')" />
 </Project>
