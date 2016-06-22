@@ -21,7 +21,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>Data.Entity.Testing.Moq.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\CodeAnalysis\BaseClassLibraries.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,7 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>Data.Entity.Testing.Moq.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\CodeAnalysis\BaseClassLibraries.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,8 +47,9 @@
     <Compile Include="TestDbContextBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Data.Entity.Testing.Moq.ruleset" />
-    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+    <CodeAnalysisDictionary Include="..\CodeAnalysis\BaseClassLibrariesDictionary.xml">
+      <Link>BaseClassLibrariesDictionary.xml</Link>
+    </CodeAnalysisDictionary>
     <Content Include="project.json" />
   </ItemGroup>
   <ItemGroup>

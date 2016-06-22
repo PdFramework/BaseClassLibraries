@@ -12,10 +12,12 @@
 
     public class TestDbContextBase<TDto, TId> where TDto : IdDtoBase<TId>
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Justification = "This is utilizing the recommended approach based on the Entity Framework documentation: https://msdn.microsoft.com/en-us/data/dn314429")]
         public Mock<DbSet<TDto>> MockDbSet { get; }
         public Mock<DbContext> MockDbContext { get; }
         public DalBase<TDto, TId> DbContextBase { get; }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope", Justification = "This is utilizing the recommended approach based on the Entity Framework documentation: https://msdn.microsoft.com/en-us/data/dn314429")]
         public TestDbContextBase(IQueryable<TDto> testDtoObjects)
         {
             if (testDtoObjects == null) throw new ArgumentNullException(nameof(testDtoObjects));

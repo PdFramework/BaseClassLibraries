@@ -29,6 +29,7 @@
     <Pickles_DocumentationFormat>HTML</Pickles_DocumentationFormat>
     <Pickles_OutputDirectory>$(MSBuildProjectDirectory)\bin\Debug\Pickles</Pickles_OutputDirectory>
     <Pickles_FeatureDirectory>$(MSBuildProjectDirectory)</Pickles_FeatureDirectory>
+    <CodeAnalysisRuleSet>..\..\CodeAnalysis\BaseClassLibraries.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,6 +38,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\CodeAnalysis\BaseClassLibraries.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

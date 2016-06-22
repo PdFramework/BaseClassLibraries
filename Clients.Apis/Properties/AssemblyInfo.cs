@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("PeinearyDevelopment.Framework.BaseClassLibraries.Clients.Apis")]
@@ -14,4 +13,3 @@ using System.Runtime.InteropServices;
 [assembly: Guid("bfd33b77-08b8-4fec-9065-fe8a944e64d2")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: CLSCompliant(true)]

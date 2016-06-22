@@ -26,7 +26,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>UnitTests.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\CodeAnalysis\BaseClassLibraries.Tests.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,7 +35,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>UnitTests.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\CodeAnalysis\BaseClassLibraries.Tests.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -58,7 +58,6 @@
   <ItemGroup>
     <Compile Include="DalBaseTests.cs" />
     <Compile Include="DateRangeEffectiveBaseApiControllerBaseTests.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestObjects\AutoMapperConfig.cs" />
     <Compile Include="TestObjects\DateRangeEffectiveContractObject.cs" />
@@ -69,10 +68,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="project.json" />
-    <None Include="UnitTests.ruleset" />
-  </ItemGroup>
-  <ItemGroup>
-    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApiTestProject\Apis\TestApiProject.Apis.csproj">
@@ -99,6 +94,11 @@
       <Project>{F4B66720-0EAD-4094-98D9-0F76A0B8508D}</Project>
       <Name>Web.Http</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\CodeAnalysis\BaseClassLibrariesDictionary.xml">
+      <Link>BaseClassLibrariesDictionary.xml</Link>
+    </CodeAnalysisDictionary>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
