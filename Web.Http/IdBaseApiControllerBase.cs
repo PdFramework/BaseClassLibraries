@@ -29,6 +29,7 @@
             ContractValidator = contractValidator;
         }
 
+		//TODO: investigate http://www.strathweb.com/2016/06/inheriting-route-attributes-in-asp-net-web-api/
         public virtual async Task<IHttpActionResult> Get(TId id)
         {
             try
