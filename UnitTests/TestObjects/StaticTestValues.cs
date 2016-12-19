@@ -4,7 +4,6 @@
 
     public static class StaticTestValues
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline")]
         static StaticTestValues()
         {
             EffectiveStartDateTimeOffset1 = DateTimeOffset.UtcNow.AddYears(-1).AddDays(1);
@@ -32,9 +31,7 @@
         public const int CreatedByUserId2 = 4;
         public static DateTimeOffset CreatedOnDateTimeOffset1 { get; }
         public static DateTimeOffset CreatedOnDateTimeOffset2 { get; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2211:NonConstantFieldsShouldNotBeVisible")]
         public static int? LastUpdatedByUserId1 = null;
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2211:NonConstantFieldsShouldNotBeVisible")]
         public static int? LastUpdatedByUserId2 = 5;
         public static DateTimeOffset? LastUpdatedOnDateTimeOffset1 { get; }
         public static DateTimeOffset? LastUpdatedOnDateTimeOffset2 { get; }

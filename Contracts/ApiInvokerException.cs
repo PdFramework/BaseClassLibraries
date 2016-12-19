@@ -5,7 +5,7 @@
     using System.Net.Http;
     using System.Runtime.Serialization;
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1032:ImplementStandardExceptionConstructors")]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1032:ImplementStandardExceptionConstructors", Justification = "This is only meant for use in one specific case. 'Standard Exception Constructors' aren't applicable.")]
     [Serializable]
     public class ApiInvokerException : Exception
     {

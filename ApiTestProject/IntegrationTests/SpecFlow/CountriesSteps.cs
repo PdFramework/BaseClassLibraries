@@ -67,7 +67,7 @@
         }
 
         [When(@"get is invoked on the countries api with the country's id")]
-        public void When_GetIsInvokdeOnTheCountriesApiWithTheCountrysId()
+        public void When_GetIsInvokedOnTheCountriesApiWithTheCountrysId()
         {
             CountryRecievedFromApi = CountriesClient.GetCountry(TestCountriesCreated.First().Id).GetAwaiter().GetResult();
         }

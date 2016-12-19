@@ -1,5 +1,6 @@
 ﻿namespace DataAccessContracts
 {
+    using System;
     using System.Data.Entity;
 
     public class CountriesDbContext : DbContext
@@ -13,6 +14,8 @@
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            if (modelBuilder == null) throw new ArgumentNullException(nameof(modelBuilder));
+
             modelBuilder.Entity<CountryDto>()
                         .ToTable("Countries", "dbo");
 
