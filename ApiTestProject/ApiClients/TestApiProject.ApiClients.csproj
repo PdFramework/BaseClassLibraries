@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ApiClients\Apis.Clients.csproj">
+    <ProjectReference Include="..\..\Apis.Clients\Apis.Clients.csproj">
       <Project>{BFD33B77-08B8-4FEC-9065-FE8A944E64D2}</Project>
       <Name>Apis.Clients</Name>
     </ProjectReference>

@@ -101,7 +101,6 @@
     <Compile Include="TestObjects\StaticTestValues.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -121,7 +120,7 @@
       <Project>{37630F58-AB43-4599-A0FB-8DE45C593B89}</Project>
       <Name>DataAccess.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAccess\Data.Entity.csproj">
+    <ProjectReference Include="..\Data.Entity\Data.Entity.csproj">
       <Project>{67DBD66A-2EF8-4672-BE74-CE162CE8E097}</Project>
       <Name>Data.Entity</Name>
     </ProjectReference>

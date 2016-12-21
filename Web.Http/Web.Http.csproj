@@ -92,7 +92,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="PeinearyDevelopment.Framework.BaseClassLibraries.Web.Http.nuspec" />
   </ItemGroup>

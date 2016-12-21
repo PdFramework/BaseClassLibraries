@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>PeinearyDevelopment.Framework.BaseClassLibraries.Web.WebActivator</id>
+    <version>$version$</version>
+    <authors>Zackery Peine</authors>
+    <description>The web activators to setup common functionality for Api controllers.</description>
+    <language>en-US</language>
+    <dependencies>
+      <group targetFramework="net461">
+        <dependency id="WebActivatorEx" version="2.2.0" />
+        <dependency id="Microsoft.Web.Infrastructure" version="1.0.0" />
+        <dependency id="Microsoft.AspNet.WebApi.WebHost" version="5.2.3" />
+        <dependency id="Ehim.Framework.Endpoints.ApiClient" version="1.0.6" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\*.xdt" target="content" />
+    <file src="bin\$configuration$\PeinearyDevelopment.Framework.BaseClassLibraries.Web.WebActivator.dll" target="lib\net461" />
+    <file src="bin\$configuration$\PeinearyDevelopment.Framework.BaseClassLibraries.Web.WebActivator.pdb" target="lib\net461" />
+  </files>
+</package>
