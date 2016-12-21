@@ -7,7 +7,6 @@
     using DataAccess;
     using DataAccessContracts;
 
-    using AutoMapper;
     using Microsoft.Practices.Unity;
     using System.Data.Entity;
     using System.Web;
@@ -20,7 +19,7 @@
         {
             var container = new UnityContainer();
 
-            container.RegisterType<DbContext, CountriesDbContext>();
+            container.RegisterType<DbContext, CountriesDbContext>(new HierarchicalLifetimeManager());
 
             container.RegisterType<IContractValidator<Country>, CountryValidator>();
             container.RegisterType<ICountriesDal, CountriesDal>();
@@ -29,7 +28,8 @@
             container.RegisterType<ICountrySubdivisionsDal, CountrySubdivisionsDal>();
 
             container.RegisterType<IIdPrincipal>(new InjectionFactory(u => HttpContext.Current.User));
-            container.RegisterType<IMapper>(new InjectionFactory(m => AutoMapperConfig.Mapper));
+            // container.RegisterInstance(HttpContext.Current.User);
+            container.RegisterInstance(AutoMapperConfig.Mapper);
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

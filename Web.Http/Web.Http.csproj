@@ -69,6 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiControllerExtensions.cs" />
+    <Compile Include="InheritanceDirectRouteProvider.cs" />
+    <Compile Include="NoopContractValidator.cs" />
     <Compile Include="SecurityApiControllerBase.cs" />
     <Compile Include="DateRangeEffectiveBaseApiControllerBase.cs" />
     <Compile Include="GlobalSuppressions.cs" />
@@ -92,9 +94,10 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="PeinearyDevelopment.Framework.BaseClassLibraries.Web.Http.nuspec" />
   </ItemGroup>
   <ItemGroup>
-      <Content Include="..\CodeAnalysis\Rules.ruleset" />
+    <Content Include="..\CodeAnalysis\Rules.ruleset" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="..\CodeAnalysis\Dictionary.xml" />

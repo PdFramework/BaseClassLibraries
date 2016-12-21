@@ -1,7 +1,6 @@
-﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.ApiClients
+﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.Apis.Clients
 {
     using Contracts;
-
     using Newtonsoft.Json;
     using Newtonsoft.Json.Serialization;
     using System;
@@ -50,7 +49,7 @@
         /// <returns>The created resource.</returns>
         public static async Task<TContract> Create<TContract>(string endpointKey, string route, TContract postBodyContent)
         {
-            return await Create(GenerateUri(endpointKey, route), postBodyContent);
+            return await Post<TContract, TContract>(GenerateUri(endpointKey, route), postBodyContent);
         }
 
         /// <summary>
@@ -66,22 +65,21 @@
             return await Update(GenerateUri(endpointKey, route), putBodyContent);
         }
 
-        #region Helpers
         private static Uri GenerateUri(string endpointKey, params string[] routeParts)
         {
             return new Uri(Path.Combine(new[] { ConfigurationManager.AppSettings[endpointKey] }.Concat(routeParts).ToArray()));
         }
 
-        private static async Task<T> Create<T>(Uri uri, T postBodyContent)
+        private static async Task<TResponse> Post<TBodyContent, TResponse>(Uri uri, TBodyContent postBodyContent)
         {
             var content = new StringContent(JsonConvert.SerializeObject(postBodyContent, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() }));
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
             using (var client = new HttpClient())
             {
-                using (var response = await client.PostAsync(uri, content))
+                using (var response = await client.PostAsync(uri, content).ConfigureAwait(false))
                 {
-                    return await GetContentObject<T>(response);
+                    return await GetContentObject<TResponse>(response);
                 }
             }
         }
@@ -90,7 +88,7 @@
         {
             using (var client = new HttpClient())
             {
-                using (var response = await client.GetAsync(uri))
+                using (var response = await client.GetAsync(uri).ConfigureAwait(false))
                 {
                     return await GetContentObject<T>(response);
                 }
@@ -104,7 +102,7 @@
 
             using (var client = new HttpClient())
             {
-                using (var response = await client.PutAsync(uri, content))
+                using (var response = await client.PutAsync(uri, content).ConfigureAwait(false))
                 {
                     return await GetContentObject<T>(response);
                 }
@@ -115,7 +113,7 @@
         {
             using (var client = new HttpClient())
             {
-                using (var response = await client.DeleteAsync(uri))
+                using (var response = await client.DeleteAsync(uri).ConfigureAwait(false))
                 {
                     if (!response.IsSuccessStatusCode) throw new ApiInvokerException(response);
                 }
@@ -124,7 +122,7 @@
 
         private static async Task<T> GetContentObject<T>(HttpResponseMessage response)
         {
-            var responseContent = await response.Content.ReadAsStringAsync();
+            var responseContent = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
             if (response.IsSuccessStatusCode)
             {
                 return JsonConvert.DeserializeObject<T>(responseContent);
@@ -132,6 +130,5 @@
 
             throw new ApiInvokerException(response);
         }
-        #endregion
     }
 }

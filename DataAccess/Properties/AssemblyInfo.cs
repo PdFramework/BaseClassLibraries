@@ -2,11 +2,11 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("PeinearyDevelopment.Framework.BaseClassLibraries.DataAccess")]
+[assembly: AssemblyTitle("PeinearyDevelopment.Framework.BaseClassLibraries.Data.Entity")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("PeinearyDevelopment")]
-[assembly: AssemblyProduct("PeinearyDevelopment.Framework.BaseClassLibraries.DataAccess")]
+[assembly: AssemblyProduct("PeinearyDevelopment.Framework.BaseClassLibraries.Data.Entity")]
 [assembly: AssemblyCopyright("Copyright © PeinearyDevelopment 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

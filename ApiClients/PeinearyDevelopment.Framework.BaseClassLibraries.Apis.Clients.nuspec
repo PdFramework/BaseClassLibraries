@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>PeinearyDevelopment.Framework.BaseClassLibraries.Apis.Clients</id>
+    <version>$version$</version>
+    <authors>Zackery Peine</authors>
+    <description>A package for wrapping interactions with internal apis.</description>
+    <language>en-US</language>
+    <dependencies>
+      <group targetFramework="net461">
+        <dependency id="Newtonsoft.Json" version="9.0.1" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\PeinearyDevelopment.Framework.BaseClassLibraries.Apis.Clients.dll" target="lib\net461" />
+    <file src="bin\$configuration$\PeinearyDevelopment.Framework.BaseClassLibraries.Apis.Clients.pdb" target="lib\net461" />
+  </files>
+</package>

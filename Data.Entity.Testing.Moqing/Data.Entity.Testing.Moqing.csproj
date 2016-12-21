@@ -72,16 +72,17 @@
       <Project>{37630F58-AB43-4599-A0FB-8DE45C593B89}</Project>
       <Name>DataAccess.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+    <ProjectReference Include="..\DataAccess\Data.Entity.csproj">
       <Project>{67DBD66A-2EF8-4672-BE74-CE162CE8E097}</Project>
-      <Name>DataAccess</Name>
+      <Name>Data.Entity</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="PeinearyDevelopment.Framework.BaseClassLibraries.Data.Entity.Testing.Moqing.nuspec" />
   </ItemGroup>
   <ItemGroup>
-      <Content Include="..\CodeAnalysis\Rules.ruleset" />
+    <Content Include="..\CodeAnalysis\Rules.ruleset" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="..\CodeAnalysis\Dictionary.xml" />

@@ -50,9 +50,12 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-      <Content Include="..\CodeAnalysis\Rules.ruleset" />
+    <Content Include="..\CodeAnalysis\Rules.ruleset" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="..\CodeAnalysis\Dictionary.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PeinearyDevelopment.Framework.BaseClassLibraries.DataAccess.Contracts.nuspec" />
   </ItemGroup>
 </Project>

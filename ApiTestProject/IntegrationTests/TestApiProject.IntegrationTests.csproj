@@ -67,11 +67,6 @@
     <Compile Include="Non_SpecFlow\CountriesTests.cs" />
     <Compile Include="Non_SpecFlow\TestData.cs" />
     <Compile Include="SpecFlow\CountriesSteps.cs" />
-    <Compile Include="SpecFlow\CountriesTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CountriesTests.feature</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

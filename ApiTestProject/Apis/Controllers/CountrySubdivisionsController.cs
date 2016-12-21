@@ -18,39 +18,10 @@
             ControllerName = Routes.CountrySubdivisionControllerName;
         }
 
-        [HttpGet]
-        [Route("{id:int}", Name = Routes.GetCountrySubdivisionNamedRouteName)]
+        [Route(Name = Routes.GetCountrySubdivisionNamedRouteName)]
         public override async Task<IHttpActionResult> Get(int id)
         {
             return await base.Get(id);
-        }
-
-        [HttpPost]
-        [Route("")]
-        public override async Task<IHttpActionResult> Post(CountrySubdivision countrySubdivision)
-        {
-            return await base.Post(countrySubdivision);
-        }
-
-        [HttpPut]
-        [Route("")]
-        public override async Task<IHttpActionResult> Put(CountrySubdivision countrySubdivision)
-        {
-            return await base.Put(countrySubdivision);
-        }
-
-        [HttpDelete]
-        [Route("{id:int}")]
-        public override async Task<IHttpActionResult> SoftDelete(int id)
-        {
-            return await base.SoftDelete(id);
-        }
-
-        [HttpDelete]
-        [Route("{id:int}/force")]
-        public override async Task<IHttpActionResult> Delete(int id)
-        {
-            return await base.Delete(id);
         }
     }
 }

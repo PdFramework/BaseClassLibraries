@@ -1,6 +1,6 @@
 ﻿Feature: CountriesTests
 	In order for addresses to have associated countries
-	As an EHIM user
+	As a user
 	I want to be able to manage the country data in our system
 
 Scenario: Create a country

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>PeinearyDevelopment.Framework.BaseClassLibraries.Contracts</id>
+    <version>$version$</version>
+    <authors>Zackery Peine</authors>
+    <description>The base objects for contracts created of api services.</description>
+    <language>en-US</language>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\PeinearyDevelopment.Framework.BaseClassLibraries.Contracts.dll" target="lib\net461" />
+    <file src="bin\$configuration$\PeinearyDevelopment.Framework.BaseClassLibraries.Contracts.pdb" target="lib\net461" />
+  </files>
+</package>

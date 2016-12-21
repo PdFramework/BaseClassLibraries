@@ -7,8 +7,8 @@
     <ProjectGuid>{67DBD66A-2EF8-4672-BE74-CE162CE8E097}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PeinearyDevelopment.Framework.BaseClassLibraries.DataAccess</RootNamespace>
-    <AssemblyName>PeinearyDevelopment.Framework.BaseClassLibraries.DataAccess</AssemblyName>
+    <RootNamespace>PeinearyDevelopment.Framework.BaseClassLibraries.Data.Entity</RootNamespace>
+    <AssemblyName>PeinearyDevelopment.Framework.BaseClassLibraries.Data.Entity</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -57,9 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="PeinearyDevelopment.Framework.BaseClassLibraries.Data.Entity.nuspec" />
   </ItemGroup>
   <ItemGroup>
-      <Content Include="..\CodeAnalysis\Rules.ruleset" />
+    <Content Include="..\CodeAnalysis\Rules.ruleset" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="..\CodeAnalysis\Dictionary.xml" />

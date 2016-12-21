@@ -1,7 +1,6 @@
 ﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.Data.Entity.Testing.Moqing
 {
     using UnitTesting.TestDoubles;
-    using DataAccess;
     using DataAccess.Contracts;
 
     using System;

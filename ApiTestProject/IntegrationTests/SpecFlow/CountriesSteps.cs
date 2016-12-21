@@ -226,7 +226,7 @@
         {
             foreach (var testCountryToCleanup in testCountriesToCleanup)
             {
-                var uri = new Uri(Path.Combine(ConfigurationManager.AppSettings[Constants.ApiEndpointKey], Routes.CountryV1BaseRoute, testCountryToCleanup.Id.ToString(), "force"));
+                var uri = new Uri(Path.Combine(ConfigurationManager.AppSettings[Constants.ApiEndpointKey], Routes.CountryV1BaseRoute, "force", testCountryToCleanup.Id.ToString()));
 
                 using (var client = new HttpClient())
                 {

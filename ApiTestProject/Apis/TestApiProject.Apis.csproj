@@ -30,7 +30,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -157,9 +157,9 @@
       <Project>{37630F58-AB43-4599-A0FB-8DE45C593B89}</Project>
       <Name>DataAccess.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\DataAccess\DataAccess.csproj">
+    <ProjectReference Include="..\..\DataAccess\Data.Entity.csproj">
       <Project>{67DBD66A-2EF8-4672-BE74-CE162CE8E097}</Project>
-      <Name>DataAccess</Name>
+      <Name>Data.Entity</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Web.Http\Web.Http.csproj">
       <Project>{F4B66720-0EAD-4094-98D9-0F76A0B8508D}</Project>

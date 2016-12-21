@@ -1,10 +1,9 @@
 ﻿namespace ApiClients
 {
-    using PeinearyDevelopment.Framework.BaseClassLibraries.ApiClients;
-
     using Contracts;
 
     using System.Threading.Tasks;
+    using PeinearyDevelopment.Framework.BaseClassLibraries.Apis.Clients;
 
     public class CountrySubdivisionsApiClient : ICountrySubdivisionsClient
     {

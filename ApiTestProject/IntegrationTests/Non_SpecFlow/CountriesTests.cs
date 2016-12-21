@@ -138,7 +138,7 @@
                 var softDeletedAddress = await CountriesClient.GetCountry(countryId);
                 Assert.IsTrue(softDeletedAddress.EffectiveEndDate > DateTime.UtcNow.AddSeconds(-5) && softDeletedAddress.EffectiveEndDate <= DateTime.UtcNow);
 
-                var uri = new Uri(Path.Combine(ConfigurationManager.AppSettings[Constants.ApiEndpointKey], Routes.CountryV1BaseRoute, countryId.ToString(), "force"));
+                var uri = new Uri(Path.Combine(ConfigurationManager.AppSettings[Constants.ApiEndpointKey], Routes.CountryV1BaseRoute, "force", countryId.ToString()));
 
                 using (var client = new HttpClient())
                 {

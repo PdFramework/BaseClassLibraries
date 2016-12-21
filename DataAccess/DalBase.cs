@@ -1,7 +1,6 @@
-﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.DataAccess
+﻿namespace PeinearyDevelopment.Framework.BaseClassLibraries.Data.Entity
 {
-    using Contracts;
-
+    using DataAccess.Contracts;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Core;

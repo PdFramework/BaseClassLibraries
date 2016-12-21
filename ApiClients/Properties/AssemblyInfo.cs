@@ -2,11 +2,11 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("PeinearyDevelopment.Framework.BaseClassLibraries.ApiClients")]
+[assembly: AssemblyTitle("PeinearyDevelopment.Framework.BaseClassLibraries.Apis.Clients")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("PeinearyDevelopment")]
-[assembly: AssemblyProduct("PeinearyDevelopment.Framework.BaseClassLibraries.ApiClients")]
+[assembly: AssemblyProduct("PeinearyDevelopment.Framework.BaseClassLibraries.Apis.Clients")]
 [assembly: AssemblyCopyright("Copyright © PeinearyDevelopment 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -54,9 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ApiClients\ApiClients.csproj">
+    <ProjectReference Include="..\..\ApiClients\Apis.Clients.csproj">
       <Project>{BFD33B77-08B8-4FEC-9065-FE8A944E64D2}</Project>
-      <Name>ApiClients</Name>
+      <Name>Apis.Clients</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Contracts\Contracts.csproj">
       <Project>{158C0B9A-B0C0-4436-8962-926C4FFB25FA}</Project>
@@ -71,7 +71,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-      <Content Include="..\..\CodeAnalysis\Rules.ruleset" />
+    <Content Include="..\..\CodeAnalysis\Rules.ruleset" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="..\..\CodeAnalysis\Dictionary.xml" />

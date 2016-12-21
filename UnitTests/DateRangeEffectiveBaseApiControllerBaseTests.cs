@@ -477,92 +477,23 @@
         }
         #endregion
 
-        #region SoftDelete Tests
-        [TestMethod]
-        [TestCategory("DateRangeEffectiveContractObjectsApi SoftDelete")]
-        public async Task Given_AValidDateRangeEffectiveContractObjectId_When_SoftDeleteIsInvoked_Then_OkStatusCodeShouldBeReturned()
-        {
-            MockDateRangeEffectiveObjectsDal.Setup(m => m.Read(StaticTestValues.ValidId1)).ReturnsAsync(new DateRangeEffectiveDtoObject());
-
-            var response = await (await DateRangeEffectiveContractObjectsController.SoftDelete(StaticTestValues.ValidId1)).ExecuteAsync(CancellationToken.None);
-
-            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
-        }
-
-        [TestMethod]
-        [TestCategory("DateRangeEffectiveContractObjectsApi SoftDelete")]
-        public async Task Given_AnInvalidDateRangeEffectiveContractObjectId_When_SoftDeleteIsInvoked_Then_NotFoundStatusCodeShouldBeReturned()
-        {
-            MockDateRangeEffectiveObjectsDal.Setup(m => m.Read(StaticTestValues.InvalidId1)).ThrowsAsync(new ObjectNotFoundException());
-
-            var response = await (await DateRangeEffectiveContractObjectsController.SoftDelete(StaticTestValues.InvalidId1)).ExecuteAsync(CancellationToken.None);
-
-            Assert.AreEqual(HttpStatusCode.NotFound, response.StatusCode);
-        }
-
-        [TestMethod]
-        [TestCategory("DateRangeEffectiveContractObjectsApi SoftDelete")]
-        public async Task Given_AnyDateRangeEffectiveContractObjectId_When_SoftDeleteIsInvoked_Then_DalReadMethodShouldOnlyBeInvokedOnce()
-        {
-            MockDateRangeEffectiveObjectsDal.Setup(m => m.Read(It.IsAny<int>())).ThrowsAsync(new ObjectNotFoundException());
-
-            await (await DateRangeEffectiveContractObjectsController.SoftDelete(StaticTestValues.InvalidId1)).ExecuteAsync(CancellationToken.None);
-
-            MockDateRangeEffectiveObjectsDal.Verify(m => m.Read(It.IsAny<int>()), Times.Once);
-        }
-
-        [TestMethod]
-        [TestCategory("DateRangeEffectiveContractObjectsApi SoftDelete")]
-        public async Task Given_AnInvalidDateRangeEffectiveContractObjectId_When_SoftDeleteIsInvoked_Then_DalUpdateMethodShouldNotBeInvoked()
-        {
-            MockDateRangeEffectiveObjectsDal.Setup(m => m.Read(0)).ThrowsAsync(new ObjectNotFoundException());
-
-            await (await DateRangeEffectiveContractObjectsController.SoftDelete(0)).ExecuteAsync(CancellationToken.None);
-
-            MockDateRangeEffectiveObjectsDal.Verify(m => m.Update(It.IsAny<DateRangeEffectiveDtoObject>()), Times.Never);
-        }
-
-        [TestMethod]
-        [TestCategory("DateRangeEffectiveContractObjectsApi SoftDelete")]
-        public async Task Given_AValidDateRangeEffectiveContractObjectId_When_SoftDeleteIsInvoked_Then_DalUpdateMethodShouldOnlyBeInvokedOnce()
-        {
-            MockDateRangeEffectiveObjectsDal.Setup(m => m.Read(StaticTestValues.ValidId1)).ReturnsAsync(new DateRangeEffectiveDtoObject());
-
-            await (await DateRangeEffectiveContractObjectsController.SoftDelete(StaticTestValues.ValidId1)).ExecuteAsync(CancellationToken.None);
-
-            MockDateRangeEffectiveObjectsDal.Verify(m => m.Update(It.IsAny<DateRangeEffectiveDtoObject>()), Times.Once);
-        }
-
-        [TestMethod]
-        [TestCategory("DateRangeEffectiveContractObjectsApi SoftDelete")]
-        public async Task Given_AValidDateRangeEffectiveContractObjectId_When_SoftDeleteIsInvoked_Then_DalUpdateMethodShouldBeInvokedWithUpdatedAuditInformation()
-        {
-            MockUser.SetupGet(m => m.Id).Returns(StaticTestValues.LastUpdatedByUserId2.Value);
-            MockDateRangeEffectiveObjectsDal.Setup(m => m.Read(StaticTestValues.ValidId1)).ReturnsAsync(new DateRangeEffectiveDtoObject());
-
-            await (await DateRangeEffectiveContractObjectsController.SoftDelete(StaticTestValues.ValidId1)).ExecuteAsync(CancellationToken.None);
-
-            MockDateRangeEffectiveObjectsDal.Verify(m => m.Update(It.Is<DateRangeEffectiveDtoObject>(c => c.LastUpdatedByUserId == StaticTestValues.LastUpdatedByUserId2 && c.LastUpdatedOn > DateTimeOffset.UtcNow.AddSeconds(-1) && c.LastUpdatedOn < DateTimeOffset.UtcNow.AddSeconds(1) && c.EffectiveEndDate > DateTimeOffset.UtcNow.AddSeconds(-1) && c.EffectiveEndDate < DateTimeOffset.UtcNow.AddSeconds(1))));
-        }
-        #endregion
-
         #region Delete Tests
         [TestMethod]
         [TestCategory("DateRangeEffectiveContractObjectsApi Delete")]
-        public async Task Given_AValidDateRangeEffectiveContractObjectId_When_DeleteIsInvoked_Then_NoContentStatusCodeShouldBeReturned()
+        public async Task Given_AValidDateRangeEffectiveContractObjectId_When_DeleteIsInvoked_Then_OkStatusCodeShouldBeReturned()
         {
-            MockDateRangeEffectiveObjectsDal.Setup(m => m.Delete(StaticTestValues.ValidId1)).Returns(Task.Factory.StartNew(() => { }));
+            MockDateRangeEffectiveObjectsDal.Setup(m => m.Read(StaticTestValues.ValidId1)).ReturnsAsync(new DateRangeEffectiveDtoObject());
 
             var response = await (await DateRangeEffectiveContractObjectsController.Delete(StaticTestValues.ValidId1)).ExecuteAsync(CancellationToken.None);
 
-            Assert.AreEqual(HttpStatusCode.NoContent, response.StatusCode);
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
         }
 
         [TestMethod]
         [TestCategory("DateRangeEffectiveContractObjectsApi Delete")]
         public async Task Given_AnInvalidDateRangeEffectiveContractObjectId_When_DeleteIsInvoked_Then_NotFoundStatusCodeShouldBeReturned()
         {
-            MockDateRangeEffectiveObjectsDal.Setup(m => m.Delete(StaticTestValues.InvalidId1)).Throws(new ObjectNotFoundException());
+            MockDateRangeEffectiveObjectsDal.Setup(m => m.Read(StaticTestValues.InvalidId1)).ThrowsAsync(new ObjectNotFoundException());
 
             var response = await (await DateRangeEffectiveContractObjectsController.Delete(StaticTestValues.InvalidId1)).ExecuteAsync(CancellationToken.None);
 
@@ -571,11 +502,80 @@
 
         [TestMethod]
         [TestCategory("DateRangeEffectiveContractObjectsApi Delete")]
-        public async Task Given_AnyDateRangeEffectiveContractObjectId_When_DeleteIsInvoked_Then_DalDeleteMethodShouldOnlyBeInvokedOnce()
+        public async Task Given_AnyDateRangeEffectiveContractObjectId_When_DeleteIsInvoked_Then_DalReadMethodShouldOnlyBeInvokedOnce()
+        {
+            MockDateRangeEffectiveObjectsDal.Setup(m => m.Read(It.IsAny<int>())).ThrowsAsync(new ObjectNotFoundException());
+
+            await (await DateRangeEffectiveContractObjectsController.Delete(StaticTestValues.InvalidId1)).ExecuteAsync(CancellationToken.None);
+
+            MockDateRangeEffectiveObjectsDal.Verify(m => m.Read(It.IsAny<int>()), Times.Once);
+        }
+
+        [TestMethod]
+        [TestCategory("DateRangeEffectiveContractObjectsApi Delete")]
+        public async Task Given_AnInvalidDateRangeEffectiveContractObjectId_When_DeleteIsInvoked_Then_DalUpdateMethodShouldNotBeInvoked()
+        {
+            MockDateRangeEffectiveObjectsDal.Setup(m => m.Read(0)).ThrowsAsync(new ObjectNotFoundException());
+
+            await (await DateRangeEffectiveContractObjectsController.Delete(0)).ExecuteAsync(CancellationToken.None);
+
+            MockDateRangeEffectiveObjectsDal.Verify(m => m.Update(It.IsAny<DateRangeEffectiveDtoObject>()), Times.Never);
+        }
+
+        [TestMethod]
+        [TestCategory("DateRangeEffectiveContractObjectsApi Delete")]
+        public async Task Given_AValidDateRangeEffectiveContractObjectId_When_DeleteIsInvoked_Then_DalUpdateMethodShouldOnlyBeInvokedOnce()
+        {
+            MockDateRangeEffectiveObjectsDal.Setup(m => m.Read(StaticTestValues.ValidId1)).ReturnsAsync(new DateRangeEffectiveDtoObject());
+
+            await (await DateRangeEffectiveContractObjectsController.Delete(StaticTestValues.ValidId1)).ExecuteAsync(CancellationToken.None);
+
+            MockDateRangeEffectiveObjectsDal.Verify(m => m.Update(It.IsAny<DateRangeEffectiveDtoObject>()), Times.Once);
+        }
+
+        [TestMethod]
+        [TestCategory("DateRangeEffectiveContractObjectsApi Delete")]
+        public async Task Given_AValidDateRangeEffectiveContractObjectId_When_DeleteIsInvoked_Then_DalUpdateMethodShouldBeInvokedWithUpdatedAuditInformation()
+        {
+            MockUser.SetupGet(m => m.Id).Returns(StaticTestValues.LastUpdatedByUserId2.Value);
+            MockDateRangeEffectiveObjectsDal.Setup(m => m.Read(StaticTestValues.ValidId1)).ReturnsAsync(new DateRangeEffectiveDtoObject());
+
+            await (await DateRangeEffectiveContractObjectsController.Delete(StaticTestValues.ValidId1)).ExecuteAsync(CancellationToken.None);
+
+            MockDateRangeEffectiveObjectsDal.Verify(m => m.Update(It.Is<DateRangeEffectiveDtoObject>(c => c.LastUpdatedByUserId == StaticTestValues.LastUpdatedByUserId2 && c.LastUpdatedOn > DateTimeOffset.UtcNow.AddSeconds(-1) && c.LastUpdatedOn < DateTimeOffset.UtcNow.AddSeconds(1) && c.EffectiveEndDate > DateTimeOffset.UtcNow.AddSeconds(-1) && c.EffectiveEndDate < DateTimeOffset.UtcNow.AddSeconds(1))));
+        }
+        #endregion
+
+        #region HardDelete Tests
+        [TestMethod]
+        [TestCategory("DateRangeEffectiveContractObjectsApi HardDelete")]
+        public async Task Given_AValidDateRangeEffectiveContractObjectId_When_HardDeleteIsInvoked_Then_NoContentStatusCodeShouldBeReturned()
+        {
+            MockDateRangeEffectiveObjectsDal.Setup(m => m.Delete(StaticTestValues.ValidId1)).Returns(Task.Factory.StartNew(() => { }));
+
+            var response = await (await DateRangeEffectiveContractObjectsController.HardDelete(StaticTestValues.ValidId1)).ExecuteAsync(CancellationToken.None);
+
+            Assert.AreEqual(HttpStatusCode.NoContent, response.StatusCode);
+        }
+
+        [TestMethod]
+        [TestCategory("DateRangeEffectiveContractObjectsApi HardDelete")]
+        public async Task Given_AnInvalidDateRangeEffectiveContractObjectId_When_HardDeleteIsInvoked_Then_NotFoundStatusCodeShouldBeReturned()
+        {
+            MockDateRangeEffectiveObjectsDal.Setup(m => m.Delete(StaticTestValues.InvalidId1)).Throws(new ObjectNotFoundException());
+
+            var response = await (await DateRangeEffectiveContractObjectsController.HardDelete(StaticTestValues.InvalidId1)).ExecuteAsync(CancellationToken.None);
+
+            Assert.AreEqual(HttpStatusCode.NotFound, response.StatusCode);
+        }
+
+        [TestMethod]
+        [TestCategory("DateRangeEffectiveContractObjectsApi Delete")]
+        public async Task Given_AnyDateRangeEffectiveContractObjectId_When_HardDeleteIsInvoked_Then_DalDeleteMethodShouldOnlyBeInvokedOnce()
         {
             MockDateRangeEffectiveObjectsDal.Setup(m => m.Delete(It.IsAny<int>())).Throws(new ObjectNotFoundException());
 
-            await (await DateRangeEffectiveContractObjectsController.Delete(StaticTestValues.InvalidId1)).ExecuteAsync(CancellationToken.None);
+            await (await DateRangeEffectiveContractObjectsController.HardDelete(StaticTestValues.InvalidId1)).ExecuteAsync(CancellationToken.None);
 
             MockDateRangeEffectiveObjectsDal.Verify(m => m.Delete(It.IsAny<int>()), Times.Once);
         }

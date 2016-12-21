@@ -62,9 +62,9 @@
       <Project>{37630F58-AB43-4599-A0FB-8DE45C593B89}</Project>
       <Name>DataAccess.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\DataAccess\DataAccess.csproj">
+    <ProjectReference Include="..\..\DataAccess\Data.Entity.csproj">
       <Project>{67DBD66A-2EF8-4672-BE74-CE162CE8E097}</Project>
-      <Name>DataAccess</Name>
+      <Name>Data.Entity</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataAccessContracts\TestApiProject.DataAccessContracts.csproj">
       <Project>{936ACF08-89DB-4F2D-A6C4-321DDD1648AC}</Project>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>PeinearyDevelopment.Framework.BaseClassLibraries.Data.Entity.Testing.Moqing</id>
+    <version>$version$</version>
+    <authors>Zackery Peine</authors>
+    <description>The base objects for writing unit tests for the data access layer utilizing Entity Framework and Moq.</description>
+    <language>en-US</language>
+    <dependencies>
+      <group targetFramework="net461">
+        <dependency id="PeinearyDevelopment.Framework.BaseClassLibraries.DataAccess.Contracts" version="$version$" />
+        <dependency id="PeinearyDevelopment.Framework.BaseClassLibraries.Data.Entity.UnitTesting" version="$version$" />
+        <dependency id="EntityFramework" version="6.1.3" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\PeinearyDevelopment.Framework.BaseClassLibraries.Data.Entity.Testing.Moqing.dll" target="lib\net461" />
+    <file src="bin\$configuration$\PeinearyDevelopment.Framework.BaseClassLibraries.Data.Entity.Testing.Moqing.pdb" target="lib\net461" />
+  </files>
+</package>

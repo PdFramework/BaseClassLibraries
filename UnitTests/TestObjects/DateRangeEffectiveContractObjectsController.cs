@@ -17,38 +17,10 @@
         }
 
         [HttpGet]
-        [Route("{id:int}", Name = StaticTestValues.GetDateRangeEffectiveContractObjectRouteName)]
+        [Route(Name = StaticTestValues.GetDateRangeEffectiveContractObjectRouteName)]
         public override async Task<IHttpActionResult> Get(int id)
         {
             return await base.Get(id);
-        }
-
-        [HttpPost]
-        [Route("")]
-        public override async Task<IHttpActionResult> Post(DateRangeEffectiveContractObject contract)
-        {
-            return await base.Post(contract);
-        }
-
-        [HttpPut]
-        [Route("")]
-        public override async Task<IHttpActionResult> Put(DateRangeEffectiveContractObject contract)
-        {
-            return await base.Put(contract);
-        }
-
-        [HttpDelete]
-        [Route("{id:int}")]
-        public override async Task<IHttpActionResult> SoftDelete(int id)
-        {
-            return await base.SoftDelete(id);
-        }
-
-        [HttpDelete]
-        [Route("{id:int}/force")]
-        public override async Task<IHttpActionResult> Delete(int id)
-        {
-            return await base.Delete(id);
         }
     }
 }

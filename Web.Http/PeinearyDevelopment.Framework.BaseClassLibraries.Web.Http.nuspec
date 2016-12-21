@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>PeinearyDevelopment.Framework.BaseClassLibraries.Web.Http</id>
+    <version>$version$</version>
+    <authors>Zackery Peine</authors>
+    <description>The base api controller for WebApi2 based service projects.</description>
+    <language>en-US</language>
+    <dependencies>
+      <group targetFramework="net461">
+        <dependency id="AutoMapper" version="5.2.0" />
+        <dependency id="Microsoft.AspNet.WebApi" version="5.2.3" />
+        <dependency id="PeinearyDevelopment.Framework.BaseClassLibraries.ApiBases.Contracts" version="$version$" />
+        <dependency id="PeinearyDevelopment.Framework.BaseClassLibraries.ApiBases.DataAccess.Contracts" version="$version$" />
+        <dependency id="PeinearyDevelopment.Framework.BaseClassLibraries.ApiBases.Data.Entity" version="$version$" />
+        <dependency id="PeinearyDevelopment.Framework.BaseClassLibraries.ApiBases.Web.WebActivator" version="$version$" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\PeinearyDevelopment.Framework.BaseClassLibraries.Web.Http.dll" target="lib\net461" />
+    <file src="bin\$configuration$\PeinearyDevelopment.Framework.BaseClassLibraries.Web.Http.pdb" target="lib\net461" />
+  </files>
+</package>

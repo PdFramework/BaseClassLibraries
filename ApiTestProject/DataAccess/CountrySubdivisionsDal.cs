@@ -1,12 +1,11 @@
 ﻿namespace DataAccess
 {
-    using PeinearyDevelopment.Framework.BaseClassLibraries.DataAccess;
-
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
     using System.Threading.Tasks;
     using DataAccessContracts;
+    using PeinearyDevelopment.Framework.BaseClassLibraries.Data.Entity;
 
     public class CountrySubdivisionsDal : DalBase<CountrySubdivisionDto, int>, ICountrySubdivisionsDal
     {

@@ -12,7 +12,7 @@
     using System.Web.Http;
 
     public class IdBaseApiControllerBase<TContract, TDto, TId> : SecurityApiControllerBase where TContract : IdContractBase<TId>
-                                                                                           where TDto : IdDtoBase<TId>
+                                                                                                    where TDto : IdDtoBase<TId>
     {
         internal IDalBase<TDto, TId> Dal { get; }
         internal IContractValidator<TContract> ContractValidator { get; }
@@ -29,6 +29,7 @@
             ContractValidator = contractValidator;
         }
 
+        [Route("{id}")]
         public virtual async Task<IHttpActionResult> Get(TId id)
         {
             try
@@ -41,14 +42,10 @@
             }
         }
 
-        public virtual async Task<IHttpActionResult> Post(TContract contract)
+        [Route("")]
+        public async Task<IHttpActionResult> Post(TContract contract)
         {
-            return await Post(contract, null);
-        }
-
-        public async Task<IHttpActionResult> Post(TContract contract, IEnumerable<string> validationErrors)
-        {
-            if(validationErrors == null) validationErrors = new List<string>();
+            IEnumerable<string> validationErrors = new List<string>();
             validationErrors = validationErrors.Concat(await ContractValidator.ValidateContract(contract));
             if (validationErrors.Any()) return BadRequest(string.Join("\n", validationErrors));
 
@@ -62,14 +59,10 @@
             return Created(Url.Link(CreatedRouteName, new { id = createdT.Id, controller = ControllerName }), createdT);
         }
 
-        public virtual async Task<IHttpActionResult> Put(TContract contract)
+        [Route("")]
+        public async Task<IHttpActionResult> Put(TContract contract)
         {
-            return await Put(contract, null);
-        }
-
-        public async Task<IHttpActionResult> Put(TContract contract, IEnumerable<string> validationErrors)
-        {
-            if (validationErrors == null) validationErrors = new List<string>();
+            IEnumerable<string> validationErrors = new List<string>();
             validationErrors = validationErrors.Concat(await ContractValidator.ValidateContract(contract));
             if (validationErrors.Any()) return BadRequest(string.Join("\n", validationErrors));
 
@@ -87,6 +80,7 @@
             }
         }
 
+        [Route("{id}")]
         public virtual async Task<IHttpActionResult> Delete(TId id)
         {
             try
