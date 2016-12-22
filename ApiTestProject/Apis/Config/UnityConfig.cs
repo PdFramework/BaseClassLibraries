@@ -28,7 +28,6 @@
             container.RegisterType<ICountrySubdivisionsDal, CountrySubdivisionsDal>();
 
             container.RegisterType<IIdPrincipal>(new InjectionFactory(u => HttpContext.Current.User));
-            // container.RegisterInstance(HttpContext.Current.User);
             container.RegisterInstance(AutoMapperConfig.Mapper);
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
