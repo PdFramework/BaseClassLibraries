@@ -11,7 +11,7 @@
         <dependency id="WebActivatorEx" version="2.2.0" />
         <dependency id="Microsoft.Web.Infrastructure" version="1.0.0" />
         <dependency id="Microsoft.AspNet.WebApi.WebHost" version="5.2.3" />
-        <dependency id="Ehim.Framework.Endpoints.ApiClient" version="1.0.6" />
+        <dependency id="PeinearyDevelopment.Framework.BaseClassLibraries.Endpoints.ApiClient" version="$version$" />
       </group>
     </dependencies>
   </metadata>
